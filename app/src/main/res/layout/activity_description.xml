@@ -33,6 +33,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/ubuntu_bold"
                 android:text="Chandani Chauk"
                 android:textColor="#ffffff"
                 android:textSize="18sp"
@@ -96,6 +97,7 @@
                 android:padding="8dp"
                 android:text="Description"
                 android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/pt_mono"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -107,10 +109,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/ubuntu_light"
                 android:gravity="center_vertical"
+                android:lineSpacingExtra="3sp"
                 android:padding="8dp"
                 android:text="@string/chandanichauk"
                 android:textColor="#565656"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -163,6 +168,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/ubuntu_bold"
                 android:lineHeight="@android:dimen/app_icon_size"
                 android:text="Gallery"
                 android:textColor="@color/colorPrimaryDark"
@@ -172,19 +178,59 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-            <ImageView
-                android:id="@+id/imageView6"
+            <TextView
+                android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
+                android:background="@drawable/ratetextback"
+                android:fontFamily="@font/ubuntu_light"
+                android:gravity="center"
                 android:padding="5dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_favorite_border_black_24dp"
-                tools:ignore="VectorDrawableCompat" />
+                android:text="Review"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/textView4254"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:id="@+id/textView4254"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/ratetextback"
+                android:fontFamily="@font/ubuntu_light"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Rate"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/favText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/ratetextback"
+                android:fontFamily="@font/ubuntu_light"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Add Favorite"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

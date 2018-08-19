@@ -26,14 +26,14 @@ import java.util.ArrayList;
 public class DescriptionActivity extends AppCompatActivity {
 
     /*
-    * Sheetal kumar | Delhi Yatri |  Software engineering project | Date -  18 aug 2018
-    * */
+     * Sheetal kumar | Delhi Yatri |  Software engineering project | Date -  18 aug 2018
+     * */
     //vars
     private Context ctx;
     private ImageView backbtn;
 
     private ImageView imageView;
-    private TextView placeName,placeDesc,title;
+    private TextView placeName, placeDesc, title;
 
     private RecyclerView recyclerView;
 
@@ -52,7 +52,7 @@ public class DescriptionActivity extends AppCompatActivity {
 
         title = findViewById(R.id.textView8);
         backbtn = findViewById(R.id.imageView9);
-        imageView = findViewById(R.id.imageView6);
+        //imageView = findViewById(R.id.imageView6);
         placeName = findViewById(R.id.textView3);
         placeDesc = findViewById(R.id.textView7);
         backbtn.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +89,6 @@ public class DescriptionActivity extends AppCompatActivity {
         mChandniChauk.add(R.drawable.bgone7);
         mChandniChauk.add(R.drawable.bgone8);
         mChandniChauk.add(R.drawable.bgone9);
-
 
 
         mplacesImage.add(R.drawable.ic_location_city_black_24dp);
@@ -171,15 +170,15 @@ public class DescriptionActivity extends AppCompatActivity {
                 recyclerView, new HomescreenActivity.ClickListener() {
             @Override
             public void onClick(View view, final int position) {
-               // Toast.makeText(DescriptionActivity.this, "Showing Position : " + position,
-                 //       Toast.LENGTH_SHORT).show();
+                // Toast.makeText(DescriptionActivity.this, "Showing Position : " + position,
+                //       Toast.LENGTH_SHORT).show();
 
                 // sending data to another activity
                 Bundle bundle = new Bundle();
 
                 bundle.putString("PlacePosition", mplacesName.get(position));
                 bundle.putInt("PlaceImage", mplacesImage.get(position));
-               // bundle.putInt("PlaceDesc",mplacesImage.get(position));
+                // bundle.putInt("PlaceDesc",mplacesImage.get(position));
 
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog();
                 bottomSheetDialog.setArguments(bundle);
@@ -192,9 +191,9 @@ public class DescriptionActivity extends AppCompatActivity {
             public void onLongClick(View view, int position) {
                 Toast.makeText(DescriptionActivity.this, "Showing Position  (Long Press) : " + position,
                         Toast.LENGTH_SHORT).show();
-           //     Intent intent = new Intent(DescriptionActivity.this, HomescreenActivity.class);
-             //   startActivity(intent);
-               // overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+                //     Intent intent = new Intent(DescriptionActivity.this, HomescreenActivity.class);
+                //   startActivity(intent);
+                // overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             }
         }));
 

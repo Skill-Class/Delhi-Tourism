@@ -1,5 +1,6 @@
 package com.example.sheetal.my.Activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView searchimg;
     TextView textView;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.textView);
         searchimg = findViewById(R.id.imageView);
+     //
 
         //getActionBar().setDisplayHomeAsUpEnabled(true);
 

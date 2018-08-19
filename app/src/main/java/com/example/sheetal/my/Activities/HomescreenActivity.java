@@ -1,6 +1,7 @@
 package com.example.sheetal.my.Activities;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -24,12 +25,13 @@ public class HomescreenActivity extends AppCompatActivity {
 
     //vars
 
-    private ImageView homeimg;
+    private ImageView backimg;
 
     private ArrayList<Integer> placesInDelhi = new ArrayList<>();
     private Context ctx;
     private RecyclerView recyclerView;
-    private ImageView searchimg;
+
+    ProgressDialog progressDialog;
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private ArrayList<Integer> mDesc = new ArrayList<>();
@@ -39,9 +41,21 @@ public class HomescreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
 
-        searchimg = findViewById(R.id.imageView);
-        homeimg = findViewById(R.id.imageView12);
-        homeimg.setOnClickListener(new View.OnClickListener() {
+
+        backimg = findViewById(R.id.imageView9);
+
+        progressDialog = new ProgressDialog(this);
+
+        backimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomescreenActivity.this,MainHomeScreen.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+            }
+        });
+
+      /*  backimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final Dialog dialog = new Dialog(HomescreenActivity.this);
@@ -52,14 +66,7 @@ public class HomescreenActivity extends AppCompatActivity {
 
             }
         });
-        searchimg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomescreenActivity.this, ParanormaListActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
-            }
-        });
+*/
         // Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.item_animation_fall_down);
         //animation.setRepeatCount(Animation.INFINITE);
         // searchimg.startAnimation(animation);
@@ -94,35 +101,44 @@ public class HomescreenActivity extends AppCompatActivity {
         mDesc.add(R.string.rashtrapatibhawan);
 
 
+        mNames.add("Jama Masjid");
+        mNames.add("Chandani Chauk");
+        mNames.add("Indira Gandhi Memorial");
+        mNames.add("India Gate");
+        mNames.add("Old Delhi");
+        mNames.add("Red Fort");
+        mNames.add("Qutub Minar");
+        mNames.add("Rashtrapati Bhawan");
+        mNames.add("Rashtrapati Bhawan");
         mImageUrls.add("https://i.redd.it/0h2gm1ix6p501.jpg");
         //   mImageUrls.add("https://unsplash.com/photos/OqtafYT5kTw");
-        mNames.add("Jama Masjid");
+
 
         mImageUrls.add("https://i.redd.it/tpsnoz5bzo501.jpg");
-        mNames.add("Chandani Chauk");
+
 
         mImageUrls.add("https://i.redd.it/qn7f9oqu7o501.jpg");
-        mNames.add("Indira Gandhi Memorial");
+
 
         mImageUrls.add("https://i.redd.it/j6myfqglup501.jpg");
-        mNames.add("India Gate");
+
 
 
         mImageUrls.add("https://i.redd.it/0h2gm1ix6p501.jpg");
-        mNames.add("Old Delhi");
+
 
         mImageUrls.add("https://i.redd.it/k98uzl68eh501.jpg");
-        mNames.add("Red Fort");
+
 
 
         mImageUrls.add("https://i.redd.it/glin0nwndo501.jpg");
-        mNames.add("Qutub Minar");
+
 
         mImageUrls.add("https://i.redd.it/obx4zydshg601.jpg");
-        mNames.add("Rashtrapati Bhawan");
+
 
         mImageUrls.add("https://i.imgur.com/ZcLLrkY.jpg");
-        mNames.add("Rashtrapati Bhawan");
+
 
         initRecyclerView();
 
@@ -151,6 +167,9 @@ public class HomescreenActivity extends AppCompatActivity {
             public void onClick(View view, final int position) {
               //  Toast.makeText(HomescreenActivity.this, "Showing Position : " + position,
                 //        Toast.LENGTH_SHORT).show();
+                // progressDialog.setTitle("Delhi Yatri");
+                  progressDialog.setMessage(" Please wait..");
+                  progressDialog.show();
                 Intent intent = new Intent(HomescreenActivity.this, DescriptionActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("PlacePosition", mNames.get(position));

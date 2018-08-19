@@ -215,4 +215,12 @@ Insider Tips:\n
 
     - Indian Citizens should carry valid photo ID Cards. In case of foreigners, they should make their request for visit along with photocopies of their passport. On the day of visit, they are required to carry their original passport for identification.</string>
     <string name="dummytextshort">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </string>
+    <string name="hinititile">अतुल्य भारत</string>
+    <string name="title_activity_main_home_screen">Delhi Yatri</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Sheetal Kumar | Meghna Agarawal</string>
+    <string name="nav_header_subtitle">Software Engineering Project, DUCS </string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 </resources>

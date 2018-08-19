@@ -50,6 +50,7 @@
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_light"
             android:hint="Enter Email"
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
@@ -76,6 +77,7 @@
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_light"
             android:hint="Enter Password"
             android:inputType="textPassword"
             android:textColor="@color/colorPrimaryDark"
@@ -102,6 +104,7 @@
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_light"
             android:hint="Confirm Password"
             android:inputType="textPassword"
             android:textColor="@color/colorPrimaryDark"
@@ -111,18 +114,19 @@
 
     <Button
         android:id="@+id/signupbtn"
-       style="@style/Widget.MaterialComponents.Button"
+        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/backgroundsearch"
+        android:fontFamily="@font/ubuntu_medium"
         android:padding="5dp"
         android:text="Sign up"
-        android:textSize="16sp"
         android:textAllCaps="false"
         android:textColor="#ffffff"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
 
@@ -142,6 +146,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:fontFamily="@font/ubuntu_medium"
         android:padding="5dp"
         android:text="Already have an account? Login here"
         android:textColor="@color/colorPrimaryDark"
