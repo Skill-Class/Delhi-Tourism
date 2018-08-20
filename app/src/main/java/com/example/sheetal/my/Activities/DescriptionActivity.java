@@ -42,6 +42,8 @@ public class DescriptionActivity extends AppCompatActivity {
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private ArrayList<String> mplacesName = new ArrayList<>();
     private ArrayList<Integer> mplacesImage = new ArrayList<>();
+    private String message = " ";
+    Integer message1 = 1;
 
 
     @Override
@@ -58,7 +60,7 @@ public class DescriptionActivity extends AppCompatActivity {
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DescriptionActivity.this, HomescreenActivity.class);
+                Intent intent = new Intent(DescriptionActivity.this, MainHomeScreen.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             }
@@ -66,13 +68,21 @@ public class DescriptionActivity extends AppCompatActivity {
 
         title.setText("Delhi Yatri");
 
-        //getting data from homescreen activity
-        Bundle bundle = getIntent().getExtras();
-        String message = bundle.getString("PlacePosition");
-        Integer message1 = bundle.getInt("PlaceDesc");
-        placeName.setText(message);
-        placeDesc.setText(message1);
+      //  String activityName = getIntent().getStringExtra("PARENT_ACTIVITY_REF");
+   /*     if (activityName.equals("parent")){
+            Bundle bundle = getIntent().getExtras();
+            String message = bundle.getString("PlacePosition");
+            placeName.setText(message);
+        }else {
+*/            //getting data from homescreen activity
+            Bundle bundle = getIntent().getExtras();
+            String message = bundle.getString("PlacePosition");
+            Integer message1 = bundle.getInt("PlaceDesc");
 
+                placeName.setText(message);
+                placeDesc.setText(message1);
+
+  //      }
         // getting images data
         getImages();
     }
@@ -184,6 +194,7 @@ public class DescriptionActivity extends AppCompatActivity {
                 bottomSheetDialog.setArguments(bundle);
 
                 bottomSheetDialog.show(getSupportFragmentManager(), "examplebottmsheetal");
+                overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 
             }
 

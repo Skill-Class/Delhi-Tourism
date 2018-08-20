@@ -37,17 +37,22 @@ import java.util.ArrayList;
 public class MainHomeScreen extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private static final String TAG =  "MainActivity";
+    private static final String TAG = "MainActivity";
     private ViewFlipper viewFlipper;
 
     private ImageView imgView;
     private CardView cardView;
+
+    private TextView viewallone;
+    private TextView viewalltwo,searchTextview;
+
 
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private ArrayList<String> mTime = new ArrayList<>();
     private ArrayList<Integer> placesInDelhi = new ArrayList<>();
     private ImageView searchimg;
+    private ArrayList<Integer> mDesc = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,17 +61,58 @@ public class MainHomeScreen extends AppCompatActivity
 
         imgView = findViewById(R.id.imageView4);
         searchimg = findViewById(R.id.imageView);
+
+        searchTextview = findViewById(R.id.textViewl);
+        searchTextview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainHomeScreen.this,ParanormaListActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+            }
+        });
+
+        viewallone = findViewById(R.id.viewalltextview);
+        viewalltwo = findViewById(R.id.viewalltextview2);
+        viewallone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainHomeScreen.this, HomescreenActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("Top Bar Value", "Showing All Places");
+                // bundle.putInt("ack",1);
+                // intent.putExtra("PARENT_ACTIVITY_REF",viewalltwo.toString());
+                intent.putExtras(bundle);
+                startActivity(intent);
+                overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+            }
+        });
+        viewalltwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainHomeScreen.this, HomescreenActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("Top Bar Value", "Restaurants");
+                // bundle.putInt("ack",1);
+                // intent.putExtra("PARENT_ACTIVITY_REF",viewalltwo.toString());
+                intent.putExtras(bundle);
+                startActivity(intent);
+                overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+            }
+        });
+
+
         cardView = findViewById(R.id.cardView);
         int resId = R.anim.layout_animation_fall_down;
         LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getApplicationContext(), resId);
 
-        cardView.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(),R.anim.item_animation_fall_down));
-       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-      //  setSupportActionBar(toolbar);
-      //  toolbar.setTitle(" ");
+        cardView.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.item_animation_fall_down));
+        // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //  setSupportActionBar(toolbar);
+        //  toolbar.setTitle(" ");
 
-        int  images[] = {R.drawable.bgseven,R.drawable.bgnine,R.drawable.bgone1};
-       // viewFlipper = findViewById(R.id.view_flipper);
+        int images[] = {R.drawable.bgseven, R.drawable.bgnine, R.drawable.bgone1};
+        // viewFlipper = findViewById(R.id.view_flipper);
         searchimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,9 +124,9 @@ public class MainHomeScreen extends AppCompatActivity
 
         getImages();  // most imortant funtion call
 
-      //  for(int image :images){
+        //  for(int image :images){
         //    flipperImages(image);
-       // }
+        // }
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -101,13 +147,15 @@ public class MainHomeScreen extends AppCompatActivity
         });
 
         //     ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-     //           this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-      //  drawer.addDrawerListener(toggle);
-       // toggle.syncState();
+        //           this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        //  drawer.addDrawerListener(toggle);
+        // toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
+
     private void getImages() {
         Log.d(TAG, "initImageBitmaps: preparing bitmaps.");
 
@@ -120,6 +168,15 @@ public class MainHomeScreen extends AppCompatActivity
         mNames.add("Qutub Minar");
         mNames.add("Rashtrapati Bhawan");
         mNames.add("Rashtrapati Bhawan");
+        //Adding data into arraylist to pass
+        mDesc.add(R.string.jamamasjid);
+        mDesc.add(R.string.chandanichauk);
+        mDesc.add(R.string.indiragandhi);
+        mDesc.add(R.string.indiagate);
+        mDesc.add(R.string.olddelhi);
+        mDesc.add(R.string.redfort);
+        mDesc.add(R.string.qutubminar);
+        mDesc.add(R.string.rashtrapatibhawan);
 
         placesInDelhi.add(R.drawable.bgtwo);
         placesInDelhi.add(R.drawable.bgthree);
@@ -130,20 +187,29 @@ public class MainHomeScreen extends AppCompatActivity
         placesInDelhi.add(R.drawable.bgeight);
         placesInDelhi.add(R.drawable.bgnine);
 
+        mDesc.add(R.string.jamamasjid);
+        mDesc.add(R.string.chandanichauk);
+        mDesc.add(R.string.indiragandhi);
+        mDesc.add(R.string.indiagate);
+        mDesc.add(R.string.olddelhi);
+        mDesc.add(R.string.redfort);
+        mDesc.add(R.string.qutubminar);
+        mDesc.add(R.string.rashtrapatibhawan);
+
         mImageUrls.add("https://i.redd.it/0h2gm1ix6p501.jpg");
-     //   mNames.add("Zop mwLA");
+        //   mNames.add("Zop mwLA");
         mTime.add("30 Videos");
 
         mImageUrls.add("https://i.redd.it/tpsnoz5bzo501.jpg");
-       // mNames.add("Trondheim");
+        // mNames.add("Trondheim");
         mTime.add("01.27");
 
         mImageUrls.add("https://i.redd.it/qn7f9oqu7o501.jpg");
-       // mNames.add("Portugal");
+        // mNames.add("Portugal");
         mTime.add("02.27");
 
         mImageUrls.add("https://i.redd.it/j6myfqglup501.jpg");
-       // mNames.add("Rocky Mountain National Park");
+        // mNames.add("Rocky Mountain National Park");
         mTime.add("02.07");
 
         mImageUrls.add("https://i.redd.it/0h2gm1ix6p501.jpg");
@@ -151,12 +217,12 @@ public class MainHomeScreen extends AppCompatActivity
         mTime.add("10.27");
 
         mImageUrls.add("https://i.redd.it/k98uzl68eh501.jpg");
-       // mNames.add("Frozen Lake");
+        // mNames.add("Frozen Lake");
         mTime.add("03.17");
 
 
         mImageUrls.add("https://i.redd.it/glin0nwndo501.jpg");
-       // mNames.add("White Sands Desert");
+        // mNames.add("White Sands Desert");
         mTime.add("23.14");
 
         mImageUrls.add("https://i.redd.it/obx4zydshg601.jpg");
@@ -164,12 +230,13 @@ public class MainHomeScreen extends AppCompatActivity
         mTime.add("02.27");
 
         mImageUrls.add("https://i.imgur.com/ZcLLrkY.jpg");
-       // mNames.add("Washington");
+        // mNames.add("Washington");
         mTime.add("12.22");
 
         initRecyclerView();
 
     }
+
     private void flipperImages(int images) {
         ImageView imageView = new ImageView(this);
         imageView.setBackgroundResource(images);
@@ -181,7 +248,6 @@ public class MainHomeScreen extends AppCompatActivity
         viewFlipper.setInAnimation(this, android.R.anim.slide_in_left);
         viewFlipper.setOutAnimation(this, android.R.anim.slide_out_right);
     }
-
 
 
     private void initRecyclerView() {
@@ -200,7 +266,7 @@ public class MainHomeScreen extends AppCompatActivity
 
         recyclerView1.setLayoutManager(layoutManager1);
         recyclerView.setLayoutManager(layoutManager);
-        RecyclerViewAdapterHomScreen adapter = new RecyclerViewAdapterHomScreen(this, mNames, placesInDelhi ,mTime);
+        RecyclerViewAdapterHomScreen adapter = new RecyclerViewAdapterHomScreen(this, mNames, placesInDelhi, mTime);
         recyclerView.setAdapter(adapter);
         recyclerView1.setAdapter(adapter);
 
@@ -211,8 +277,13 @@ public class MainHomeScreen extends AppCompatActivity
             public void onClick(View view, final int position) {
                 Toast.makeText(MainHomeScreen.this, "Showing Position : " + position,
                         Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainHomeScreen.this,HomescreenActivity.class);
+                Intent intent = new Intent(MainHomeScreen.this, DescriptionActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("PlacePosition", mNames.get(position));
+                bundle.putInt("PlaceDesc", mDesc.get(position));
+                intent.putExtras(bundle);
                 startActivity(intent);
+                overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
                 //finish();
             }
 
@@ -278,8 +349,6 @@ public class MainHomeScreen extends AppCompatActivity
 
         }
     }
-
-
 
 
     //recycler ends here

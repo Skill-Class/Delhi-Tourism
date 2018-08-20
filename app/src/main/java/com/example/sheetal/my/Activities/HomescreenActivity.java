@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sheetal.my.Adapters.RecyclerViewAdapter;
@@ -32,20 +33,26 @@ public class HomescreenActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
 
     ProgressDialog progressDialog;
+
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private ArrayList<Integer> mDesc = new ArrayList<>();
+
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
 
+    textView = findViewById(R.id.textView8);
+
+        Bundle bundle = getIntent().getExtras();
+        String message = bundle.getString("Top Bar Value");
+        textView.setText(message);
 
         backimg = findViewById(R.id.imageView9);
-
         progressDialog = new ProgressDialog(this);
-
         backimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,6 +80,7 @@ public class HomescreenActivity extends AppCompatActivity {
 
         getImages();
     }
+
 
 
     private void getImages() {
