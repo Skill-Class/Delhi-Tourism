@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ import com.example.sheetal.my.Adapters.RecyclerViewAdapterDesc;
 import com.example.sheetal.my.Adapters.RecyclerViewAdapterForNearby;
 import com.example.sheetal.my.R;
 import com.example.sheetal.my.dialogs.BottomSheetDialog;
+import com.ms.square.android.expandabletextview.ExpandableTextView;
 
 import java.util.ArrayList;
 
@@ -33,6 +35,8 @@ public class DescriptionActivity extends AppCompatActivity {
     private ImageView backbtn;
 
     private ImageView imageView;
+    private ImageButton mapbutton;
+
     private TextView placeName, placeDesc, title;
 
     private RecyclerView recyclerView;
@@ -52,11 +56,28 @@ public class DescriptionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_description);
 
 
+        mapbutton = findViewById(R.id.imageButton);
         title = findViewById(R.id.textView8);
         backbtn = findViewById(R.id.imageView9);
         //imageView = findViewById(R.id.imageView6);
         placeName = findViewById(R.id.textView3);
         placeDesc = findViewById(R.id.textView7);
+        // sample code snippet to set the text content on the ExpandableTextView
+      // ExpandableTextView expTv1 = findViewById(R.id.expand_text_view);
+      // expTv1.setText(getString(R.string.dummytextshort));
+
+// IMPORTANT - call setText on the ExpandableTextView to set the text content to display
+        //expTv1.setText(getString(R.string.dummytextshort));
+
+
+        mapbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DescriptionActivity.this,MapsActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+            }
+        });
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -221,9 +242,9 @@ public class DescriptionActivity extends AppCompatActivity {
             public void onLongClick(View view, int position) {
                 Toast.makeText(DescriptionActivity.this, "Showing Position  (Long Press) : " + position,
                         Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(DescriptionActivity.this, HomescreenActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+                //Intent intent = new Intent(DescriptionActivity.this, HomescreenActivity.class);
+                //startActivity(intent);
+               // overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             }
         }));
 

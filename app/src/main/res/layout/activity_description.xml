@@ -108,7 +108,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"
                 android:fontFamily="@font/ubuntu_light"
                 android:gravity="center_vertical"
                 android:lineSpacingExtra="3sp"
@@ -122,6 +121,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ratingBar"
                 app:layout_constraintVertical_bias="0.0" />
+
 
 
             <RatingBar
@@ -189,7 +189,7 @@
                 android:fontFamily="@font/ubuntu_light"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="Review"
+                android:text="Reviews"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="12sp"
                 android:textStyle="bold"
