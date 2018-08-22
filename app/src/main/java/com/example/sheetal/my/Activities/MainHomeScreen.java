@@ -45,7 +45,7 @@ public class MainHomeScreen extends AppCompatActivity
     private static final String TAG = "MainActivity";
     private ViewFlipper viewFlipper;
 
-    private ImageView imgView;
+    private ImageView imgView,ChatImageView;
     private CardView cardView;
 
     private TextView viewallone;
@@ -64,10 +64,23 @@ public class MainHomeScreen extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home_screen);
 
-        imgView = findViewById(R.id.imageView4);
-        searchimg = findViewById(R.id.imageView);
 
+        imgView = findViewById(R.id.imageView4);
+        ChatImageView = findViewById(R.id.chatimgview);
+        searchimg = findViewById(R.id.imageView);
+        viewallone = findViewById(R.id.viewalltextview);
+        viewalltwo = findViewById(R.id.viewalltextview2);
         searchTextview = findViewById(R.id.textViewl);
+
+       ChatImageView.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(MainHomeScreen.this,ChatActivity.class);
+               startActivity(intent);
+               overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+           }
+       });
+
         searchTextview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,8 +90,6 @@ public class MainHomeScreen extends AppCompatActivity
             }
         });
 
-        viewallone = findViewById(R.id.viewalltextview);
-        viewalltwo = findViewById(R.id.viewalltextview2);
         viewallone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -39,7 +39,9 @@ dependencies {
     // compile 'com.github.jd-alexander:LikeButton:0.2.3'
 
     // expandable text view
-    compile 'com.ms-square:expandableTextView:0.1.4'
+    //  compile 'com.ms-square:expandableTextView:0.1.4'
+//    compile 'com.github.nkzawa:socket.io-client:0.3.0'
+
 
     // glide
     implementation 'com.github.bumptech.glide:glide:4.7.1'

@@ -21,7 +21,7 @@ import com.example.sheetal.my.Adapters.RecyclerViewAdapterDesc;
 import com.example.sheetal.my.Adapters.RecyclerViewAdapterForNearby;
 import com.example.sheetal.my.R;
 import com.example.sheetal.my.dialogs.BottomSheetDialog;
-import com.ms.square.android.expandabletextview.ExpandableTextView;
+
 
 import java.util.ArrayList;
 
