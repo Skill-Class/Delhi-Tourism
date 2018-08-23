@@ -73,7 +73,7 @@ public class DescriptionActivity extends AppCompatActivity {
         mapbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DescriptionActivity.this,MapsActivity.class);
+                Intent intent = new Intent(DescriptionActivity.this,ChatActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             }

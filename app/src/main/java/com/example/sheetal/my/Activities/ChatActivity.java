@@ -5,16 +5,31 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.sheetal.my.Adapters.RecyclerViewAdapterForChat;
+import com.example.sheetal.my.Model.ChatData;
 import com.example.sheetal.my.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ChatActivity extends AppCompatActivity {
 
@@ -23,18 +38,42 @@ public class ChatActivity extends AppCompatActivity {
     private ImageView backimg;
     private RecyclerView recyclerView;
     private ImageButton sendchatbtn;
+    private FirebaseAuth mAuth;
+    private FirebaseUser mUser;
+    private String chatuserid;
+    private DatabaseReference mRootRef;
+    private FirebaseDatabase firebaseDatabase;
     private ArrayList<String> mchat = new ArrayList<>();
-    private ArrayList<String> mchatreceived = new ArrayList<>();
+    // private List<ChatData> chatDataList;
+    private String mCurrentUserId;
+    private List<ChatData> mMessagesList = new ArrayList<>();
+    private LinearLayoutManager linearLayoutManager;
+    private RecyclerViewAdapterForChat mAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+
+        mRootRef = FirebaseDatabase.getInstance().getReference();
         backimg = findViewById(R.id.imageView9);
         mInputMessageView = findViewById(R.id.chatText);
 
 
+        mAdapter = new RecyclerViewAdapterForChat(mMessagesList);
+        recyclerView = findViewById(R.id.recyclerView);
+        linearLayoutManager=new LinearLayoutManager(this);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(mAdapter);
+
+        loadmessages();
+
+
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
+        mCurrentUserId = mAuth.getCurrentUser().getUid();
         backimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,29 +82,85 @@ public class ChatActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             }
         });
+
         sendchatbtn = findViewById(R.id.imageButton2);
         sendchatbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                mchat.add(mInputMessageView.getText().toString().trim());
+                // String chatMessage = mInputMessageView.getText().toString();
+                // mchat.add(chatMessage);
+                sendMessage();
                 mInputMessageView.setText(" ");
-                 //int value = 0;
-
                 // hiding keyboard after message is send.
                 InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                 inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+
+
             }
         });
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        // working code before firebase database
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        RecyclerViewAdapterForChat adapter = new RecyclerViewAdapterForChat(mchat, this,1);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(layoutManager);
-
-
+     //   LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+    //    LinearLayout layoutManager = new LinearLayout(this);
+     //   RecyclerView recyclerView = findViewById(R.id.recyclerView);
+      //  RecyclerViewAdapterForChat adapter = new RecyclerViewAdapterForChat(mchat, this, chatuserid);
+      //  recyclerView.setAdapter(adapter);
+       // recyclerView.setLayoutManager(layoutManager);
 
     }
+
+    private void loadmessages() {
+
+       mRootRef.child("messages").addChildEventListener(new ChildEventListener() {
+           @Override
+           public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+               mMessagesList.add(dataSnapshot.getValue(ChatData.class));
+               mAdapter.notifyDataSetChanged();
+               recyclerView.scrollToPosition(mMessagesList.size()-1);
+           }
+
+           @Override
+           public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+           }
+
+           @Override
+           public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+           }
+
+           @Override
+           public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+           }
+
+           @Override
+           public void onCancelled(DatabaseError databaseError) {
+
+           }
+       });
+    }
+
+    private void sendMessage() {
+        String message = mInputMessageView.getText().toString();
+        if (!TextUtils.isEmpty(message)) {
+
+            DatabaseReference user_message_push = mRootRef.child("messages").push();
+            String push_id = user_message_push.getKey();
+
+            ChatData chatData = new ChatData("chatMessage", "userId");
+            DatabaseReference newPost = user_message_push;
+
+            Map<String, String> DataToSave = new HashMap<>();
+            DataToSave.put("chatMessage", message);
+            DataToSave.put("userId", mUser.getUid());
+
+            user_message_push.setValue(DataToSave);
+            Toast.makeText(getApplicationContext(), "Message Sent", Toast.LENGTH_LONG).show();
+
+        }
+    }
+
+
 }
