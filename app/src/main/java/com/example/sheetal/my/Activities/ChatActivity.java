@@ -7,6 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.sheetal.my.Adapters.RecyclerViewAdapterForChat;
 import com.example.sheetal.my.Model.ChatData;
+import com.example.sheetal.my.Model.Messages;
 import com.example.sheetal.my.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -41,6 +44,10 @@ public class ChatActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     private String chatuserid;
+    private ImageView sendname;
+
+    private EditText userName;
+
     private DatabaseReference mRootRef;
     private FirebaseDatabase firebaseDatabase;
     private ArrayList<String> mchat = new ArrayList<>();
@@ -56,9 +63,14 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
 
 
+
         mRootRef = FirebaseDatabase.getInstance().getReference();
         backimg = findViewById(R.id.imageView9);
         mInputMessageView = findViewById(R.id.chatText);
+        userName = findViewById(R.id.textView8);
+      //  final String username = userName.getText().toString();
+      //  sendname = findViewById(R.id.name_edittext_btn);
+
 
 
         mAdapter = new RecyclerViewAdapterForChat(mMessagesList);
@@ -67,6 +79,11 @@ public class ChatActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(mAdapter);
+
+        int resId = R.anim.layout_animation_fall_down;
+        LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getApplicationContext(), resId);
+        recyclerView.setLayoutAnimation(animation);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
         loadmessages();
 
@@ -149,12 +166,16 @@ public class ChatActivity extends AppCompatActivity {
             DatabaseReference user_message_push = mRootRef.child("messages").push();
             String push_id = user_message_push.getKey();
 
-            ChatData chatData = new ChatData("chatMessage", "userId");
+         //   DatabaseReference current_user_emailid = mRootRef.child("Users").child(mCurrentUserId);
+           // Messages email = new Messages();
+
+            ChatData chatData = new ChatData("chatMessage", "userId","userName");
             DatabaseReference newPost = user_message_push;
 
             Map<String, String> DataToSave = new HashMap<>();
             DataToSave.put("chatMessage", message);
             DataToSave.put("userId", mUser.getUid());
+            DataToSave.put("userName", userName.getText().toString());
 
             user_message_push.setValue(DataToSave);
             Toast.makeText(getApplicationContext(), "Message Sent", Toast.LENGTH_LONG).show();

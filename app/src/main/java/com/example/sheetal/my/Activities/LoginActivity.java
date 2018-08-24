@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Toast.makeText(LoginActivity.this,"Please wait..",Toast.LENGTH_SHORT).show();
                 String email = emailtext.getEditText().getText().toString().trim();
                 String password = passwordtext.getEditText().getText().toString().trim();
 
@@ -90,10 +90,5 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-    }
+
 }

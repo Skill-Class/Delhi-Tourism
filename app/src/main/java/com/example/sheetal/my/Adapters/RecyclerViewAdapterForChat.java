@@ -46,15 +46,18 @@ public class RecyclerViewAdapterForChat extends RecyclerView.Adapter<RecyclerVie
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
+      //  int VIEW_TYPE;
+      //  if (viewType == 1) {
 
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_send_message, parent, false);
             return new ViewHolder(view);
+       // } else {
+         //    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_received_message, parent, false);
+           //  return new ViewHolder(view);
+            //   }
 
-          // View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_received_message, parent, false);
-           // return new ViewHolder(view);
-     //   }
-
-        //  return new ViewHolder(view,viewType);
+            //  return new ViewHolder(view,viewType);
+        //}
     }
 
     @SuppressLint("ResourceAsColor")
@@ -69,20 +72,23 @@ public class RecyclerViewAdapterForChat extends RecyclerView.Adapter<RecyclerVie
         if (from_user.equals(current_user_id)){
            holder.chattext.setBackgroundResource(R.drawable.chatrighttext);
            holder.chattext.setText(c.getChatMessage());
+           holder.SenderName.setText(c.getUserName());
         }else{
            holder.chattext.setBackgroundResource(R.drawable.chatrighttextone);
             holder.chattext.setText(c.getChatMessage());
+            holder.SenderName.setText(c.getUserName());
         }
+   //   holder.chattext.setText(c.getChatMessage());
 
     }
 /*
     @Override
     public int getItemViewType(int position) {
 //        mUser = mAuth.getCurrentUser();
-//  String current_user_id = mAuth.getCurrentUser().getUid();
+        String current_user_id = mAuth.getCurrentUser().getUid();
         ChatData chatData = mMessageList.get(position);
         String from_user = chatData.getUserId();
-        if(from_user.equals("1")){
+        if(from_user.equals(current_user_id)){
             return 1;
         }else {
             return 0;
@@ -100,6 +106,7 @@ public class RecyclerViewAdapterForChat extends RecyclerView.Adapter<RecyclerVie
         // ImageView image;
         ImageView left_image, right_image;
         TextView chattext;
+        TextView SenderName;
         //   TextView time;
 
         public ViewHolder(View itemView) {
@@ -107,7 +114,7 @@ public class RecyclerViewAdapterForChat extends RecyclerView.Adapter<RecyclerVie
             left_image = itemView.findViewById(R.id.image_right);
             chattext = itemView.findViewById(R.id.textView19);
             //     right_image = itemView.findViewById(R.id.image_right);
-            //   time = itemView.findViewById(R.id.textView3);
+               SenderName = itemView.findViewById(R.id.sender_name);
         }
     }
 }

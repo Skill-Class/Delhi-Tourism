@@ -10,13 +10,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sheetal.my.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
     ImageView searchimg;
     TextView textView;
     ProgressDialog progressDialog;
-
+    FirebaseUser mUser;
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         searchimg = findViewById(R.id.imageView);
      //
 
+        mAuth  = FirebaseAuth.getInstance();
+
         //getActionBar().setDisplayHomeAsUpEnabled(true);
 
         Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadetext);
@@ -34,22 +39,44 @@ public class MainActivity extends AppCompatActivity {
         searchimg.startAnimation(animation);
         textView.startAnimation(animation1);
 
-        final Intent intent = new Intent(this, LoginActivity.class);
-        Thread timer = new Thread() {
-            @Override
-            public void run() {
-                try {
-                    sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } finally {
 
-                    startActivity(intent);
-                    finish();
-                    overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            senttomain();
+            finish();
+        }else{
+            final Intent intent = new Intent(this, LoginActivity.class);
+            Thread timer = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } finally {
+
+                        startActivity(intent);
+                        finish();
+                        overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+                    }
                 }
-            }
-        };
-        timer.start();
+            };
+            timer.start();
+
+        }
+
+    }
+
+    private void senttomain() {
+        Intent intent = new Intent(MainActivity.this, MainHomeScreen.class);
+        startActivity(intent);
+        finish();
     }
 }

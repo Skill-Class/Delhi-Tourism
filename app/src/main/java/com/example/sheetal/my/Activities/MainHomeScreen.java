@@ -36,6 +36,7 @@ import com.example.sheetal.my.Adapters.RecyclerViewAdapter;
 import com.example.sheetal.my.Adapters.RecyclerViewAdapterHomScreen;
 import com.example.sheetal.my.Fragments.AboutDelhiFragment;
 import com.example.sheetal.my.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -58,6 +59,7 @@ public class MainHomeScreen extends AppCompatActivity
     private ArrayList<Integer> placesInDelhi = new ArrayList<>();
     private ImageView searchimg;
     private ArrayList<Integer> mDesc = new ArrayList<>();
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +73,8 @@ public class MainHomeScreen extends AppCompatActivity
         viewallone = findViewById(R.id.viewalltextview);
         viewalltwo = findViewById(R.id.viewalltextview2);
         searchTextview = findViewById(R.id.textViewl);
+
+        mAuth = FirebaseAuth.getInstance();
 
        ChatImageView.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -429,7 +433,11 @@ public class MainHomeScreen extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_logout) {
+            mAuth.signOut();
+            Intent intent = new Intent (MainHomeScreen.this,LoginActivity.class);
+            startActivity(intent);
+            return true;
 
         }
 

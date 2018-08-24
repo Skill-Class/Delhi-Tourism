@@ -130,7 +130,8 @@
                     android:padding="10dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_dehaze_black_24dp" />
+                    app:srcCompat="@drawable/ic_dehaze_black_24dp"
+                    tools:ignore="VectorDrawableCompat" />
 
                 <ImageView
                     android:id="@+id/chatimgview"
@@ -142,7 +143,7 @@
                     android:padding="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_menu_send" />
+                    app:srcCompat="@drawable/ic_question_answer_black_24dp" />
 
 
             </android.support.constraint.ConstraintLayout>
