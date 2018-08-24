@@ -7,7 +7,7 @@
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/icon"
-            android:title="Must Watch Places" />
+            android:title="Must Visit Places" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
@@ -19,7 +19,7 @@
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Important Messages" />
     </group>
 
     <item android:title="Communicate">

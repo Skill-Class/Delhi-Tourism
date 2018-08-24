@@ -21,7 +21,10 @@ import com.example.sheetal.my.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.security.Timestamp;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static com.example.sheetal.my.R.drawable.*;
@@ -67,16 +70,25 @@ public class RecyclerViewAdapterForChat extends RecyclerView.Adapter<RecyclerVie
 
         ChatData c = mMessageList.get(position);
         mAuth = FirebaseAuth.getInstance();
-       String current_user_id = mAuth.getCurrentUser().getUid();
+
+
+
+        java.text.DateFormat dateFormat = java.text.DateFormat.getDateInstance();
+        String formattedDate = dateFormat.format(new Date(Long.valueOf(c.getTimestamp())).getTime());
+
+
+        String current_user_id = mAuth.getCurrentUser().getUid();
         String from_user = c.getUserId();
         if (from_user.equals(current_user_id)){
            holder.chattext.setBackgroundResource(R.drawable.chatrighttext);
            holder.chattext.setText(c.getChatMessage());
            holder.SenderName.setText(c.getUserName());
+           holder.timeTextView.setText(formattedDate);
         }else{
            holder.chattext.setBackgroundResource(R.drawable.chatrighttextone);
             holder.chattext.setText(c.getChatMessage());
             holder.SenderName.setText(c.getUserName());
+            holder.timeTextView.setText(formattedDate);
         }
    //   holder.chattext.setText(c.getChatMessage());
 
@@ -107,7 +119,7 @@ public class RecyclerViewAdapterForChat extends RecyclerView.Adapter<RecyclerVie
         ImageView left_image, right_image;
         TextView chattext;
         TextView SenderName;
-        //   TextView time;
+        TextView timeTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -115,6 +127,7 @@ public class RecyclerViewAdapterForChat extends RecyclerView.Adapter<RecyclerVie
             chattext = itemView.findViewById(R.id.textView19);
             //     right_image = itemView.findViewById(R.id.image_right);
                SenderName = itemView.findViewById(R.id.sender_name);
+                timeTextView = itemView.findViewById(R.id.time_textView);
         }
     }
 }

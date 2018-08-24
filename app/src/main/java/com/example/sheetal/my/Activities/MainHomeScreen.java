@@ -414,18 +414,10 @@ public class MainHomeScreen extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-            final Dialog dialog = new Dialog(MainHomeScreen.this);
-            dialog.setContentView(R.layout.menudialog);
-            TextView closetext = dialog.findViewById(R.id.closetextview);
-            closetext.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dialog.dismiss();
-                }
-            });
-            //listView = dialog.findViewById(R.id.listView1);
-            dialog.setCancelable(true);
-            dialog.show();
+          Toast.makeText(MainHomeScreen.this,"Hello world;",Toast.LENGTH_LONG).show();
+        //  Dialog log  = new Dialog(this);
+          //log.setContentView(R.layout.menudialog);
+        //  log.show();
 
         } else if (id == R.id.nav_slideshow) {
 

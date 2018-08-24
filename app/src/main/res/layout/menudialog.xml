@@ -10,16 +10,18 @@
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints">
 
         <android.support.constraint.ConstraintLayout
+            android:id="@+id/insider_constraint"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">0
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/closetextview"
@@ -33,96 +35,106 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textViewFromMenu"
+                android:id="@+id/textView20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/ubuntu_light"
                 android:padding="16dp"
-                android:text="@string/rashtrapatibhawan"
+                android:text="@string/dummytextshort"
+                android:textColor="#414040"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.642"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/closetextview" />
 
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="334dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+            <RelativeLayout
+                android:id="@+id/relative_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewFromMenu">
-
+                app:layout_constraintTop_toBottomOf="@+id/textView20">
+<RelativeLayout
+    android:id="@+id/first_relative_layout"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
                 <TextView
-                    android:id="@+id/textView20"
+                    android:id="@+id/text_air"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu_medium"
-                    android:text="How to get here?"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="AIR"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="14sp"
-                    app:layout_constraintTop_toBottomOf="parent" />
-
-                <Button
-                    android:id="@+id/airbutton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginRight="16dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="Air"
-                    android:textColor="#ffffff"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
-
-                <Button
-                    android:id="@+id/railbutton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="Rail"
-                    android:textColor="#ffffff"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/roadbutton"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorPrimaryDark"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="Road"
-                    android:textColor="#ffffff"
-                    app:layout_constraintEnd_toStartOf="@+id/airbutton"
-                    app:layout_constraintStart_toEndOf="@+id/railbutton"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:id="@+id/text_rail"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginStart="16dp"
-                    android:fontFamily="@font/ubuntu_light"
-                    android:padding="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:layout_toEndOf="@+id/text_air"
+                    android:layout_toRightOf="@+id/text_air"
                     android:gravity="center"
-                    android:text="@string/dummytextshort"
+                    android:padding="10sp"
+                    android:text="RAIL"
                     android:textColor="@color/colorPrimaryDark"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/roadbutton" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
-            </android.support.constraint.ConstraintLayout>
+                <TextView
+                    android:id="@+id/text_road"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:layout_toEndOf="@+id/text_rail"
+                    android:layout_toRightOf="@+id/text_rail"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="ROAD"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+</RelativeLayout>
+                <RelativeLayout
+
+                    android:id="@+id/second_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@id/first_relative_layout">
+<ImageView
+    android:id="@+id/dialog_icon"
+    android:padding="14dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/icon"/>
+                    <view
+                        android:layout_alignRight="@id/dialog_icon"
+                        android:id="@id/view"
+                        android:background="@color/colorPrimary"
+                        android:layout_width="1dp"
+                        android:layout_height="55dp"/>
+                    <TextView
+                        android:layout_alignLeft="@+id/view"
+                        android:padding="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="12sp"
+                        android:text="@string/dummytextshort" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

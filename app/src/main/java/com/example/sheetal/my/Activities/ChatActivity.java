@@ -27,6 +27,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -169,13 +170,14 @@ public class ChatActivity extends AppCompatActivity {
          //   DatabaseReference current_user_emailid = mRootRef.child("Users").child(mCurrentUserId);
            // Messages email = new Messages();
 
-            ChatData chatData = new ChatData("chatMessage", "userId","userName");
+            ChatData chatData = new ChatData("chatMessage", "userId","userName","timestamp");
             DatabaseReference newPost = user_message_push;
 
             Map<String, String> DataToSave = new HashMap<>();
             DataToSave.put("chatMessage", message);
             DataToSave.put("userId", mUser.getUid());
             DataToSave.put("userName", userName.getText().toString());
+            DataToSave.put("timestamp", String.valueOf(java.lang.System.currentTimeMillis()));
 
             user_message_push.setValue(DataToSave);
             Toast.makeText(getApplicationContext(), "Message Sent", Toast.LENGTH_LONG).show();

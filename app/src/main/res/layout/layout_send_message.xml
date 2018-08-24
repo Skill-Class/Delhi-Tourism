@@ -2,14 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="5dp"
-    android:layout_width="wrap_content"
+   android:paddingLeft="5dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 <TextView
     android:id="@+id/sender_name"
     android:text="Sheetal Kumar"
     android:textColor="@color/colorPrimaryDark"
     android:textSize="10sp"
+    android:padding="4dp"
     android:layout_marginLeft="48dp"
     android:textStyle="bold"
     android:layout_width="wrap_content"
@@ -24,8 +25,8 @@
             android:background="@drawable/chatrighttext"
             android:fontFamily="@font/ubuntu_light"
             android:padding="10dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="40dp"
             android:textColor="#ffffff"
             android:textSize="12sp"
             android:layout_toRightOf="@+id/image_right" />
@@ -39,4 +40,18 @@
             android:src="@drawable/avatar"
             android:layout_alignParentLeft="true" />
 
+        <TextView
+            android:id="@+id/time_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:padding="4dp"
+            android:text="Aug 24 , 04:18 PM"
+            android:textSize="10sp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="0dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true" />
 </RelativeLayout>
