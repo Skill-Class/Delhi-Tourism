@@ -95,7 +95,7 @@ public class ChatActivity extends AppCompatActivity {
         alertDialog.setTitle("Delhi Yatri");
         alertDialog.setIcon(R.drawable.icon);
         alertDialog.setCancelable(true);
-        alertDialog.setMessage("Hello, Welcome in the chatting section of Delhi Yatri. We request you to be humble to everyone. Please do not use any abusive language here.For better experience, we suggest you to enter your name before posting anything . Press agree  to accept our terms and conditions. thank you ! ");
+        alertDialog.setMessage("Hello, welcome to the chatting section of Delhi Yatri. We request you to be humble to everyone. The use of abusive language is prohibited. For a better experience, kindly enter your name before posting. Press agree to accept our terms and conditions. thank you ! ");
         alertDialog.setButton(alertDialog.BUTTON_POSITIVE, "Agree", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
