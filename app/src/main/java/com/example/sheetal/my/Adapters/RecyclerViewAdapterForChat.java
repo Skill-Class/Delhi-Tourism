@@ -3,7 +3,9 @@ package com.example.sheetal.my.Adapters;
 import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -70,6 +72,10 @@ public class RecyclerViewAdapterForChat extends RecyclerView.Adapter<RecyclerVie
 
         ChatData c = mMessageList.get(position);
         mAuth = FirebaseAuth.getInstance();
+
+       // Bundle bundle = ;
+        //String message = bundle.getString("Top Bar Value");
+       // holder.SenderName.setText(message);
 
 
 

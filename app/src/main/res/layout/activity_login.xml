@@ -10,10 +10,10 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="49dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/delhi" />
 
     <ImageView
@@ -144,50 +144,4 @@
             android:textSize="14sp" />
     </android.support.design.widget.TextInputLayout>
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:visibility="invisible"
-        android:layout_marginTop="8dp"
-        android:padding="14dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="20dp"
-            android:layout_height="8dp"
-            android:background="@drawable/flagone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="20dp"
-            android:layout_height="8dp"
-            android:background="@drawable/flagtwo"
-            android:gravity="center"
-            android:text="*"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="20dp"
-            android:layout_height="8dp"
-            android:background="@drawable/flagthree"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.51"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button4" />
-
-
-    </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

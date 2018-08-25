@@ -76,10 +76,22 @@ public class MainHomeScreen extends AppCompatActivity
 
         mAuth = FirebaseAuth.getInstance();
 
-       ChatImageView.setOnClickListener(new View.OnClickListener() {
+      // Bundle bundle = new Bundle();
+     //   Bundle bundle = getIntent().getExtras();
+     //   final String currentusername = bundle.getString("UserName");
+        //textView.setText(message);
+
+
+
+
+        ChatImageView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                Intent intent = new Intent(MainHomeScreen.this,ChatActivity.class);
+            //   Intent intent = new Intent(RegisterActivity.this, MainHomeScreen.class);
+             //  Bundle bundle1 = new Bundle();
+              // bundle1.putString("UserName",currentusername);
+
                startActivity(intent);
                overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
            }

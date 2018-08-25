@@ -1,11 +1,15 @@
 package com.example.sheetal.my.Activities;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
@@ -18,7 +22,7 @@ import android.widget.Toast;
 
 import com.example.sheetal.my.Adapters.RecyclerViewAdapterForChat;
 import com.example.sheetal.my.Model.ChatData;
-import com.example.sheetal.my.Model.Messages;
+
 import com.example.sheetal.my.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -69,10 +73,48 @@ public class ChatActivity extends AppCompatActivity {
         backimg = findViewById(R.id.imageView9);
         mInputMessageView = findViewById(R.id.chatText);
         userName = findViewById(R.id.textView8);
+
+      //  Dialog dialog = new Dialog(this);
+       // dialog.setContentView(R.layout.menudialog);
+       // dialog.show();
       //  final String username = userName.getText().toString();
       //  sendname = findViewById(R.id.name_edittext_btn);
 
+        //Bundle bundle = getIntent().getExtras();
+       // final String currentusername = bundle.getString("UserName");
+        //textView.setText(message);
+       //userName.setText(currentusername);
 
+// adding dialog
+
+
+       // View view  = LayoutInflater.from(getApplication(),R.layout.dialogforusername,null);
+
+        final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+      //  alertDialog.setContentView(R.layout.menudialog);
+        alertDialog.setTitle("Delhi Yatri");
+        alertDialog.setIcon(R.drawable.icon);
+        alertDialog.setCancelable(true);
+        alertDialog.setMessage("Hello, Welcome in the chatting section of Delhi Yatri. We request you to be humble to everyone. Please do not use any abusive language here.For better experience, we suggest you to enter your name before posting anything . Press agree  to accept our terms and conditions. thank you ! ");
+        alertDialog.setButton(alertDialog.BUTTON_POSITIVE, "Agree", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                alertDialog.cancel();
+            }
+        });
+        alertDialog.setButton(alertDialog.BUTTON_NEGATIVE, "Not Agree", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(ChatActivity.this,"Sorry. we can not allow you to post anything until you do not accept our terms and conditions.!",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(ChatActivity.this,MainHomeScreen.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        alertDialog.show();
+
+        // dialog ends here
 
         mAdapter = new RecyclerViewAdapterForChat(mMessagesList);
         recyclerView = findViewById(R.id.recyclerView);
@@ -168,9 +210,10 @@ public class ChatActivity extends AppCompatActivity {
             String push_id = user_message_push.getKey();
 
          //   DatabaseReference current_user_emailid = mRootRef.child("Users").child(mCurrentUserId);
-           // Messages email = new Messages();
+          //  DatabaseReference u
 
             ChatData chatData = new ChatData("chatMessage", "userId","userName","timestamp");
+
             DatabaseReference newPost = user_message_push;
 
             Map<String, String> DataToSave = new HashMap<>();

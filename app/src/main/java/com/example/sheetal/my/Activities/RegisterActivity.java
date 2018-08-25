@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sheetal.my.Model.Users;
 import com.example.sheetal.my.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -20,6 +21,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -32,8 +36,9 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseUser mUser;
     private TextInputLayout email;
     private TextInputLayout pass;
+    private TextInputLayout username;
     private TextInputLayout confmpass;
-
+private String currentusername= null;
     private DatabaseReference databaseReference;
     private FirebaseDatabase mdatabase;
 
@@ -56,7 +61,9 @@ public class RegisterActivity extends AppCompatActivity {
         email = findViewById(R.id.textInputLayoutemail);
         pass = findViewById(R.id.textinputlayoutpassword);
         confmpass = findViewById(R.id.textInputLayout4);
+        username = findViewById(R.id.textInputLayoutusername);
 
+        currentusername=username.getEditText().getText().toString();
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,8 +85,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void createNewAccoutnt() {
         final String emailID = email.getEditText().getText().toString().trim();
-        String password = pass.getEditText().getText().toString().trim();
-        String confirmpassword = confmpass.getEditText().getText().toString().trim();
+        final String password = pass.getEditText().getText().toString().trim();
+        final String confirmpassword = confmpass.getEditText().getText().toString().trim();
+        final String userName = username.getEditText().getText().toString();
+
 
         if (!TextUtils.isEmpty(emailID) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(confirmpassword)) {
 
@@ -90,8 +99,22 @@ public class RegisterActivity extends AppCompatActivity {
 
                         if (task.isSuccessful()) {
                             String userid = mAuth.getCurrentUser().getUid();
-                            DatabaseReference currentUserDb = databaseReference.child("Users").child(userid);
-                            currentUserDb.child("Email").setValue(emailID);
+                            DatabaseReference currentUserDb = databaseReference.child("Users").push();
+                            String pushId = currentUserDb.getKey();
+
+                            Users users = new Users("userName","userEmailId","userProfilePic");
+
+                            Map<String, String> DataToSave = new HashMap<>();
+                            DataToSave.put("userName", userName);
+                            DataToSave.put("userEmailId", emailID);
+                            DataToSave.put("userProfilePic", password);
+                           // DataToSave.put("timestamp", String.valueOf(java.lang.System.currentTimeMillis()));
+
+                            currentUserDb.setValue(DataToSave);
+
+                            //currentUserDb.child("Email").setValue(emailID);
+                            //currentUserDb.child("Username").setValue(username);
+
                             progressDialog.setTitle("Success");
                             progressDialog.setMessage("We are creating your account. Please wait..");
                             progressDialog.show();
@@ -113,7 +136,11 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void senttomain() {
+
         Intent intent = new Intent(RegisterActivity.this, MainHomeScreen.class);
+    //    Bundle bundle = new Bundle();
+      //  bundle.putString("UserName",currentusername);
+       // intent.putExtras(bundle);
         startActivity(intent);
         finish();
     }

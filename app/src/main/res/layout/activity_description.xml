@@ -124,6 +124,7 @@
 
 
 
+
             <RatingBar
                 android:id="@+id/ratingBar"
                 style="@style/Base.Widget.AppCompat.RatingBar.Small"
@@ -231,6 +232,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/textView4"
                 app:layout_constraintTop_toTopOf="parent" />
+
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
