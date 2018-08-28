@@ -3,6 +3,7 @@ package com.example.sheetal.my.Activities;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -23,6 +24,7 @@ import com.example.sheetal.my.Adapters.RecyclerViewAdapterDesc;
 import com.example.sheetal.my.Adapters.RecyclerViewAdapterForNearby;
 import com.example.sheetal.my.R;
 import com.example.sheetal.my.dialogs.BottomSheetDialog;
+import com.example.sheetal.my.dialogs.BottomSheetDiloagForReviews;
 
 
 import java.util.ArrayList;
@@ -39,7 +41,7 @@ public class DescriptionActivity extends AppCompatActivity {
     private ImageView imageView;
     private ImageButton mapbutton;
 
-    private TextView placeName, placeDesc, title,rateTextView;
+    private TextView placeName, placeDesc, title,rateTextView,reviewTextView;
 
     private RecyclerView recyclerView;
     private TextView favText;
@@ -70,7 +72,17 @@ public class DescriptionActivity extends AppCompatActivity {
       // expTv1.setText(getString(R.string.dummytextshort));
         favText = findViewById(R.id.favText);
         rateTextView = findViewById(R.id.textView4254);
+        reviewTextView = findViewById(R.id.textView4);
 
+        reviewTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                BottomSheetDiloagForReviews bottomSheetDialog = new BottomSheetDiloagForReviews();
+                bottomSheetDialog.show(getSupportFragmentManager(), "examplebottmsheetal");
+               // bottomSheetDialog.se
+            }
+        });
         rateTextView.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceAsColor")
             @Override
@@ -250,8 +262,8 @@ public class DescriptionActivity extends AppCompatActivity {
 
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog();
                 bottomSheetDialog.setArguments(bundle);
-
                 bottomSheetDialog.show(getSupportFragmentManager(), "examplebottmsheetal");
+
                 overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 
             }
