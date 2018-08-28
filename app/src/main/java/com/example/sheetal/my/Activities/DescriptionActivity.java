@@ -1,5 +1,6 @@
 package com.example.sheetal.my.Activities;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,9 +39,10 @@ public class DescriptionActivity extends AppCompatActivity {
     private ImageView imageView;
     private ImageButton mapbutton;
 
-    private TextView placeName, placeDesc, title;
+    private TextView placeName, placeDesc, title,rateTextView;
 
     private RecyclerView recyclerView;
+    private TextView favText;
 
     private ArrayList<Integer> mChandniChauk = new ArrayList<>();
     private ArrayList<String> mNames = new ArrayList<>();
@@ -65,6 +68,40 @@ public class DescriptionActivity extends AppCompatActivity {
         // sample code snippet to set the text content on the ExpandableTextView
       // ExpandableTextView expTv1 = findViewById(R.id.expand_text_view);
       // expTv1.setText(getString(R.string.dummytextshort));
+        favText = findViewById(R.id.favText);
+        rateTextView = findViewById(R.id.textView4254);
+
+        rateTextView.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
+            @Override
+            public void onClick(View v) {
+                if (rateTextView.getText().toString().equals("Rate Now")){
+                    rateTextView.setText("Already Rated");
+                    //   favText.setBackgroundResource(R.drawable.ratetextback);
+                    // favText.setBackgroundResource(R.color.colorPrimaryDark);
+                }else{
+                    rateTextView.setText("Rate Now");
+                    //  favText.setBackgroundResource(R.drawable.ratetextback);
+                }
+            }
+        });
+
+        favText.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
+            @Override
+            public void onClick(View v) {
+                if (favText.getText().toString().equals("Add Favorite")){
+                    favText.setText("Added to Favorite");
+                 //   favText.setBackgroundResource(R.drawable.ratetextback);
+                   // favText.setBackgroundResource(R.color.colorPrimaryDark);
+                }else{
+                    favText.setText("Add Favorite");
+                  //  favText.setBackgroundResource(R.drawable.ratetextback);
+                }
+            }
+        });
+
+
 
 // IMPORTANT - call setText on the ExpandableTextView to set the text content to display
         //expTv1.setText(getString(R.string.dummytextshort));

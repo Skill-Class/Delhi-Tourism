@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".Activities.RegisterActivity">
 
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="49dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -30,6 +31,21 @@
         app:srcCompat="@drawable/every" />
 
 
+    <ImageView
+        android:id="@+id/profilepic_imageView"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:scaleType="centerCrop"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayoutusername"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -42,12 +58,12 @@
 
         android:layout_marginTop="8dp"
         android:textColorHint="@color/colorPrimaryDark"
-        app:errorEnabled="true"
 
+        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/profilepic_imageView"
         tools:ignore="MissingConstraints">
 
         <android.support.design.widget.TextInputEditText
@@ -72,7 +88,6 @@
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
 
-        android:layout_marginTop="8dp"
         android:textColorHint="@color/colorPrimaryDark"
         app:errorEnabled="true"
 
@@ -152,24 +167,25 @@
     <Button
         android:id="@+id/signupbtn"
         style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="76dp"
+        android:layout_height="40dp"
+
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:background="@drawable/backgroundsearch"
-        android:fontFamily="@font/ubuntu_medium"
-        android:padding="5dp"
+        android:layout_marginTop="8dp"
+
+        android:background="@drawable/chatrighttext"
         android:text="Sign up"
         android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
-        android:layout_height="88dp"
+        android:layout_height="85dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -181,14 +197,26 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/ubuntu_medium"
         android:padding="5dp"
-        android:text="Already have an account? Login here"
+        android:text="Already have an account? Signin"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+
+    <TextView
+        android:id="@+id/testlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Test Login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

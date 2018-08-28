@@ -2,6 +2,7 @@ package com.example.sheetal.my.Activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -9,18 +10,23 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sheetal.my.Model.Users;
 import com.example.sheetal.my.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -41,6 +47,11 @@ public class RegisterActivity extends AppCompatActivity {
 private String currentusername= null;
     private DatabaseReference databaseReference;
     private FirebaseDatabase mdatabase;
+    private StorageReference mFirebaseStorage;
+    private TextView testLogin;
+    private ImageView profilePic;
+    private Uri resultUri = null;
+    private final static int GALLERY_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +60,42 @@ private String currentusername= null;
 
         btn = findViewById(R.id.signupbtn);
         textView = findViewById(R.id.textView10);
+        profilePic= findViewById(R.id.profilepic_imageView);
+
         progressDialog = new ProgressDialog(this);
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-        //  mAuth = FirebaseAuth.getInstance();
+    //    mdatabase = FirebaseDatabase.getInstance();
+  //      databaseReference = mdatabase.getReference().child("MUsers");
+
+
+//        mFirebaseStorage = FirebaseStorage.getInstance().getReference().child("MBlog_Profile_Pics");
+
+        testLogin = findViewById(R.id.testlogin);
+        testLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this,MainHomeScreen.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // getting image from gallery start
+        profilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent galleryIntent = new Intent();
+                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                galleryIntent.setType("image/*");
+                startActivityForResult(galleryIntent, GALLERY_CODE);
+
+            }
+        });
+        // getting image from gallery ends
+
         mdatabase = FirebaseDatabase.getInstance();
         databaseReference = mdatabase.getReference();
 
@@ -83,6 +124,62 @@ private String currentusername= null;
         });
     }
 
+    // accout with image start here.
+    /*
+    private void createNewAccoutnt() {
+        final String name = username.getEditText().getText().toString().trim();
+       // final String lname = lastName.getText().toString().trim();
+        String em = email.getEditText().getText().toString().trim();
+        String pwd = pass.getEditText().getText().toString().trim();
+
+        if (!TextUtils.isEmpty(name)
+                && !TextUtils.isEmpty(em) && !TextUtils.isEmpty(pwd)) {
+
+            progressDialog.setMessage("Creating Account...");
+            progressDialog.show();
+
+            mAuth.createUserWithEmailAndPassword(em, pwd)
+                    .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+                            if (authResult != null) {
+
+                                StorageReference imagePath = mFirebaseStorage.child("MBlog_Profile_Pics")
+                                        .child(resultUri.getLastPathSegment());
+
+                                imagePath.putFile(resultUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                    @Override
+                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                                        String userid = mAuth.getCurrentUser().getUid();
+
+                                        DatabaseReference currenUserDb = databaseReference.child(userid);
+                                        currenUserDb.child("firstname").setValue(name);
+                                       // currenUserDb.child("lastname").setValue(lname);
+                                        currenUserDb.child("image").setValue(resultUri.toString());
+
+
+                                        progressDialog.dismiss();
+
+                                        //send users to postList
+                                        Intent intent = new Intent(RegisterActivity.this, MainHomeScreen.class );
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        startActivity(intent);
+                                    }
+                                });
+                            }
+
+                        }
+                    });
+
+
+        }
+    }
+
+*/ // account with iamge ends here.
+
+
+    // working code starts here.
     private void createNewAccoutnt() {
         final String emailID = email.getEditText().getText().toString().trim();
         final String password = pass.getEditText().getText().toString().trim();
@@ -98,6 +195,11 @@ private String currentusername= null;
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()) {
+
+//                            StorageReference imagePath = mFirebaseStorage.child("MBlog_Profile_Pics")
+  //                                  .child(resultUri.getLastPathSegment());
+
+
                             String userid = mAuth.getCurrentUser().getUid();
                             DatabaseReference currentUserDb = databaseReference.child("Users").push();
                             String pushId = currentUserDb.getKey();
@@ -108,6 +210,7 @@ private String currentusername= null;
                             DataToSave.put("userName", userName);
                             DataToSave.put("userEmailId", emailID);
                             DataToSave.put("userProfilePic", password);
+                          //  DataToSave.put()
                            // DataToSave.put("timestamp", String.valueOf(java.lang.System.currentTimeMillis()));
 
                             currentUserDb.setValue(DataToSave);
@@ -134,6 +237,7 @@ private String currentusername= null;
 
         }
     }
+ // working code ends here.
 
     private void senttomain() {
 

@@ -54,16 +54,15 @@
                 <ImageView
                     android:id="@+id/imageView8"
                     android:layout_width="383dp"
-                    android:layout_height="118dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_height="101dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/bimg1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.523"
+                    app:layout_constraintHorizontal_bias="0.492"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textViewl"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintVertical_bias="0.428" />
 
 
                 <TextView
@@ -74,14 +73,13 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
                     android:background="@drawable/backgroundsearch"
-                    android:fontFamily="@font/ubuntu_light"
+                    android:fontFamily="@font/montserrat"
                     android:gravity="center"
                     android:hint="Explore delhi like never before!"
                     android:padding="10dp"
                     android:textColorHint="#ffffff"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.416"
                     app:layout_constraintStart_toStartOf="parent"
@@ -104,19 +102,19 @@
 
                 <TextView
                     android:id="@+id/textView18"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/ubuntu_medium"
+                    android:fontFamily="@font/montserrat"
                     android:lineSpacingExtra="8sp"
-                    android:padding="5dp"
+                    android:padding="10dp"
                     android:text="Hello Sheetal, \nWhere do you want to go?"
                     android:textAllCaps="false"
                     android:textColor="#ffffff"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:typeface="normal"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/chatimgview"
                     app:layout_constraintStart_toEndOf="@+id/imageView4"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -165,10 +163,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:fontFamily="@font/ubuntu_bold"
+                android:fontFamily="@font/montserrat_bold"
                 android:padding="5dp"
                 android:text="See All Places"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/content" />
 
@@ -178,10 +176,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
-                android:fontFamily="@font/ubuntu_bold"
+                android:fontFamily="@font/montserrat_bold"
                 android:padding="5dp"
                 android:text="Restaurants"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
@@ -210,18 +208,21 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView" />
+                app:layout_constraintTop_toBottomOf="parent" />
 
             <android.support.v7.widget.CardView
                 android:id="@+id/cardView1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="3dp"
                 app:cardUseCompatPadding="true"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recyclerView1"
                 tools:ignore="MissingConstraints">
 
@@ -234,6 +235,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/bgone2"
@@ -243,7 +245,7 @@
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/ubuntu_medium"
+                        android:fontFamily="@font/montserrat_bold"
                         android:padding="5dp"
                         android:text="Massage and Spa"
                         android:textColor="@color/colorPrimaryDark"
@@ -260,7 +262,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_marginLeft="8dp"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/ubuntu_medium"
+                        android:fontFamily="@font/montserrat"
                         android:padding="5dp"
                         android:text="00:27"
                         android:textSize="12sp"
@@ -299,7 +301,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginRight="8dp"
-                        android:fontFamily="@font/ubuntu_light"
+                        android:fontFamily="@font/montserrat"
                         android:padding="5dp"
                         android:text="Multi Cuisine"
                         android:textSize="10sp"
@@ -324,89 +326,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/recyclerView1"
                 tools:ignore="MissingConstraints">
 
-                <android.support.constraint.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:id="@+id/imageViewhome"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:scaleType="centerCrop"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/bgone2"
-                        tools:ignore="MissingConstraints" />
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/ubuntu_medium"
-                        android:padding="5dp"
-                        android:text="Massage and Spa"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageViewhome"
-                        tools:text="Massage and Spa" />
-
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginStart="8dp"
-                        android:fontFamily="@font/ubuntu_medium"
-                        android:padding="5dp"
-                        android:text="00:27"
-                        android:textSize="12sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
-                        tools:text="37 Km" />
-
-                    <RatingBar
-                        android:id="@+id/ratingBar"
-                        style="@style/Base.Widget.AppCompat.RatingBar.Small"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:foregroundGravity="center"
-                        android:isIndicator="true"
-                        android:numStars="5"
-                        android:padding="5dp"
-                        android:rating="3.5"
-                        android:scaleX="0.7"
-                        android:scaleY="0.7"
-                        android:transformPivotX="0dp"
-                        android:transformPivotY="0dp"
-                        android:translationX="0dp"
-                        android:translationY="0dp"
-                        android:visibility="visible"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.748"
-                        app:layout_constraintStart_toEndOf="@+id/textView2"
-                        app:layout_constraintTop_toBottomOf="@+id/imageViewhome" />
-
-                    <TextView
-                        android:id="@+id/textView22"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginRight="8dp"
-                        android:fontFamily="@font/ubuntu_light"
-                        android:padding="5dp"
-                        android:text="Multi Cuisine"
-                        android:textSize="10sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
-
-                </android.support.constraint.ConstraintLayout>
             </android.support.v7.widget.CardView>
 
             <TextView
@@ -415,11 +335,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:fontFamily="@font/ubuntu_medium"
+                android:fontFamily="@font/montserrat"
                 android:padding="5dp"
                 android:text="view all"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/content" />
 
@@ -429,11 +349,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:fontFamily="@font/ubuntu_medium"
+                android:fontFamily="@font/montserrat"
                 android:padding="5dp"
                 android:text="view all"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
         </android.support.constraint.ConstraintLayout>

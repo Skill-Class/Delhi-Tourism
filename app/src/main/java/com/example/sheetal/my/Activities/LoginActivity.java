@@ -13,6 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sheetal.my.R;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -30,6 +33,8 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputLayout emailtext, passwordtext;
     private FirebaseDatabase firebaseDatabase;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +49,10 @@ public class LoginActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView10);
         emailtext = findViewById(R.id.textInputLayoutemail);
         passwordtext =findViewById(R.id.textinputlayoutpassword);
+
+        // ******************Google SignIn Start here ************
+
+
 
         progressDialog = new ProgressDialog(this);
         textView.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +98,4 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-
-
 }
