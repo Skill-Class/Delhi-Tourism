@@ -35,6 +35,8 @@ public class DescriptionActivity extends AppCompatActivity {
      * Sheetal kumar | Delhi Yatri |  Software engineering project | Date -  18 aug 2018
      * */
     //vars
+    
+    //Meghna| hello
     private Context ctx;
     private ImageView backbtn;
 
