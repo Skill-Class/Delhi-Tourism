@@ -14,7 +14,6 @@ import com.example.sheetal.my.R;
 
 public class BottomSheetDialog extends BottomSheetDialogFragment {
 
-
     // vars
     private TextView topPlace;
     private ImageView imageView;

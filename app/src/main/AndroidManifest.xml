@@ -53,7 +53,8 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".Activities.ChatActivity" />
-        <activity android:name=".Activities.AccountSettingActivity"></activity>
+        <activity android:name=".Activities.AccountSettingActivity" />
+        <activity android:name=".Activities.IntroActivity"></activity>
     </application>
 
 </manifest>

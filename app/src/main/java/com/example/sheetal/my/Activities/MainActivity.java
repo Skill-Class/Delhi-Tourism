@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             senttomain();
             finish();
         }else{
-            final Intent intent = new Intent(this, LoginActivity.class);
+            final Intent intent = new Intent(this, IntroActivity.class);
             Thread timer = new Thread() {
                 @Override
                 public void run() {

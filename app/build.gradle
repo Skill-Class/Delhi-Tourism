@@ -36,7 +36,7 @@ dependencies {
 
     //  implementation 'com.google.android.material:material:1.0.0-beta01'
     // compile 'com.github.devlight:infinitecycleviewpager:1.0.2'
-
+    //  compile 'com.theartofdev.edmodo:android-image-cropper:2.7.+'
 //likeButton
     // compile 'com.github.jd-alexander:LikeButton:0.2.3'
 
