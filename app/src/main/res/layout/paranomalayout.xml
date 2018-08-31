@@ -20,13 +20,16 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/constraintbackground"
-        android:fontFamily="@font/ubuntu_bold"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/backgroundsearch"
+        android:fontFamily="@font/montserrat"
         android:padding="12dp"
         android:text="Vidhan Sabha"
         android:textColor="#ffffff"
-        android:textSize="10sp"
+        android:textSize="8sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>

@@ -37,6 +37,7 @@ import com.example.sheetal.my.Adapters.RecyclerViewAdapterHomScreen;
 import com.example.sheetal.my.Fragments.AboutDelhiFragment;
 import com.example.sheetal.my.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.skyfishjy.library.RippleBackground;
 
 import java.util.ArrayList;
 
@@ -59,6 +60,7 @@ public class MainHomeScreen extends AppCompatActivity
     private ArrayList<Integer> placesInDelhi = new ArrayList<>();
     private ImageView searchimg;
     private ArrayList<Integer> mDesc = new ArrayList<>();
+    FloatingActionButton floatingActionButton;
     private FirebaseAuth mAuth;
 
     @Override
@@ -164,8 +166,11 @@ public class MainHomeScreen extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+              //  Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                //        .setAction("Action", null).show();
+                Intent intent = new Intent(MainHomeScreen.this,MapActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             }
         });
 
