@@ -19,7 +19,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/backgroundsearch"
-        android:fontFamily="@font/ubuntu_bold"
+        android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:padding="10dp"
         android:text="Incredible India"
@@ -45,7 +45,6 @@
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView"
         app:layout_constraintVertical_bias="0.812" />
-
 
 
 </android.support.constraint.ConstraintLayout>
