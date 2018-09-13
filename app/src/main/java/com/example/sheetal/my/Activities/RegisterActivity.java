@@ -195,15 +195,12 @@ private String currentusername= null;
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()) {
-
 //                            StorageReference imagePath = mFirebaseStorage.child("MBlog_Profile_Pics")
   //                                  .child(resultUri.getLastPathSegment());
-
 
                             String userid = mAuth.getCurrentUser().getUid();
                             DatabaseReference currentUserDb = databaseReference.child("Users").push();
                             String pushId = currentUserDb.getKey();
-
                             Users users = new Users("userName","userEmailId","userProfilePic");
 
                             Map<String, String> DataToSave = new HashMap<>();
@@ -212,12 +209,9 @@ private String currentusername= null;
                             DataToSave.put("userProfilePic", password);
                           //  DataToSave.put()
                            // DataToSave.put("timestamp", String.valueOf(java.lang.System.currentTimeMillis()));
-
                             currentUserDb.setValue(DataToSave);
-
                             //currentUserDb.child("Email").setValue(emailID);
                             //currentUserDb.child("Username").setValue(username);
-
                             progressDialog.setTitle("Success");
                             progressDialog.setMessage("We are creating your account. Please wait..");
                             progressDialog.show();
