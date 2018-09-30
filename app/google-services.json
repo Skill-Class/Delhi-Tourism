@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "976140018956",
+    "firebase_url": "https://delhitoursim-e7cc4.firebaseio.com",
+    "project_id": "delhitoursim-e7cc4",
+    "storage_bucket": "delhitoursim-e7cc4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:976140018956:android:472f4a41825ae0a0",
+        "android_client_info": {
+          "package_name": "com.example.sheetal.my"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "976140018956-4sucvm2hv4f2vctnr96m9eb1f4oa6rrb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sheetal.my",
+            "certificate_hash": "d7d54eb1d56c91010d17f293007dee0bdd3b855e"
+          }
+        },
+        {
+          "client_id": "976140018956-cmp17k5d2avtfhikd63le5goprn7e9gq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ-2Wy7p1mcGbveNBP8lSj5sTEDzR2hqI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "976140018956-cmp17k5d2avtfhikd63le5goprn7e9gq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -27,16 +27,16 @@ public class SlideAdapter extends PagerAdapter {
 
     //Arrays
     public int[] slide_image = {
-            R.drawable.bgfive,
-            R.drawable.bgtwo,
-            R.drawable.bgone8
+            R.drawable.introone,
+            R.drawable.introtwo,
+            R.drawable.introthree
     };
 
     public String[] slide_headings = {"Travel", "Explore", "Experience"};
 
-    public String[] slide_desc = {"Hi Delhi",
-            "Bye Delhi",
-            "Hi again delhi"};
+    public String[] slide_desc = {"Travel delhi like never before. Although there are shaded areas in the complex but it is always good to carry sunscreen or sunglasses especially during summer.",
+            "Explore best food outlets of delhi. Although there are shaded areas in the complex but it is always good to carry sunscreen or sunglasses especially during summer.",
+            "Experience 'The Desi Swag' of delhi people. Although there are shaded areas in the complex but it is always good to carry sunscreen or sunglasses especially during summer."};
 
 
     @Override
