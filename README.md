@@ -1,4 +1,4 @@
 # delhi_tourism
-under development
+under development, Android App
 
 Software Engineering Project.
