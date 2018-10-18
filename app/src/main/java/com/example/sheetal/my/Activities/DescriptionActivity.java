@@ -3,7 +3,6 @@ package com.example.sheetal.my.Activities;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,7 +14,6 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -229,7 +227,7 @@ public class DescriptionActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView1);
-        RecyclerView recyclerView1 = findViewById(R.id.recyclerView3);
+        RecyclerView recyclerView1 = findViewById(R.id.recyclerViewForShops);
 
         //this is for animation in recycler view.
         int resId = R.anim.layout_animation_fall_down;

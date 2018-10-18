@@ -84,7 +84,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView3">
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewForShops">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -367,7 +367,7 @@
     </ScrollView>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView3"
+        android:id="@+id/recyclerViewForShops"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

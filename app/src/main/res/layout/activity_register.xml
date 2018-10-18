@@ -12,7 +12,7 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="49dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,39 +32,24 @@
         app:srcCompat="@drawable/every" />
 
 
-    <ImageView
-        android:id="@+id/profilepic_imageView"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/avatar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayoutusername"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
-
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        android:textColorHint="@color/colorPrimaryDark"
+        android:layout_marginEnd="16dp"
 
+        android:layout_marginRight="16dp"
+
+        android:textColorHint="@color/colorPrimaryDark"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilepic_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
         tools:ignore="MissingConstraints">
 
         <android.support.design.widget.TextInputEditText

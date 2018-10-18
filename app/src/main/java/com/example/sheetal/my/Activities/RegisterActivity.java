@@ -84,16 +84,7 @@ private String currentusername= null;
 
 
         // getting image from gallery start
-        profilePic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent galleryIntent = new Intent();
-                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
-                galleryIntent.setType("image/*");
-                startActivityForResult(galleryIntent, GALLERY_CODE);
 
-            }
-        });
         // getting image from gallery ends
 
         mdatabase = FirebaseDatabase.getInstance();

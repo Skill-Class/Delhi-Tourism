@@ -177,11 +177,11 @@
                 android:id="@+id/androidtextVew"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
 
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Restaurants"
+                android:text="Must Visit Places"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -361,17 +361,5 @@
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_place_black_24dp" />
 
 </android.support.constraint.ConstraintLayout>

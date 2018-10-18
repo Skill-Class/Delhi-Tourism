@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.ShareActionProvider;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Gravity;
@@ -52,12 +53,16 @@ public class MainHomeScreen extends AppCompatActivity
 
     private TextView viewallone;
     private TextView viewalltwo,searchTextview;
+    private android.widget.ShareActionProvider mShareActionProvider;
 
 
     private ArrayList<String> mNames = new ArrayList<>();
+    private ArrayList<String> mmNames = new ArrayList<>();
+
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private ArrayList<String> mTime = new ArrayList<>();
     private ArrayList<Integer> placesInDelhi = new ArrayList<>();
+    private ArrayList<Integer> rInDelhi = new ArrayList<>();
     private ImageView searchimg;
     private ArrayList<Integer> mDesc = new ArrayList<>();
     FloatingActionButton floatingActionButton;
@@ -162,17 +167,7 @@ public class MainHomeScreen extends AppCompatActivity
         //    flipperImages(image);
         // }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-              //  Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                //        .setAction("Action", null).show();
-                Intent intent = new Intent(MainHomeScreen.this,MapActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
-            }
-        });
+
 
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -205,6 +200,17 @@ public class MainHomeScreen extends AppCompatActivity
         mNames.add("Qutub Minar");
         mNames.add("Rashtrapati Bhawan");
         mNames.add("Rashtrapati Bhawan");
+
+        mmNames.add("Red Fort");
+        mmNames.add("Qutub Minar");
+        mmNames.add("Rashtrapati Bhawan");
+        mmNames.add("Rashtrapati Bhawan");
+        mmNames.add("Jama Masjid");
+        mmNames.add("Chandani Chauk");
+        mmNames.add("Indira Gandhi Memorial");
+        mmNames.add("India Gate");
+        mmNames.add("Old Delhi");
+
         //Adding data into arraylist to pass
         mDesc.add(R.string.jamamasjid);
         mDesc.add(R.string.chandanichauk);
@@ -223,6 +229,17 @@ public class MainHomeScreen extends AppCompatActivity
         placesInDelhi.add(R.drawable.bgseven);
         placesInDelhi.add(R.drawable.bgeight);
         placesInDelhi.add(R.drawable.bgnine);
+
+
+        rInDelhi.add(R.drawable.bgsix);
+        rInDelhi.add(R.drawable.bgseven);
+        rInDelhi.add(R.drawable.bgeight);
+        rInDelhi.add(R.drawable.bgnine);
+        rInDelhi.add(R.drawable.bgtwo);
+        rInDelhi.add(R.drawable.bgthree);
+        rInDelhi.add(R.drawable.bgfour);
+        rInDelhi.add(R.drawable.bgfive);
+
 
         mDesc.add(R.string.jamamasjid);
         mDesc.add(R.string.chandanichauk);
@@ -304,8 +321,9 @@ public class MainHomeScreen extends AppCompatActivity
         recyclerView1.setLayoutManager(layoutManager1);
         recyclerView.setLayoutManager(layoutManager);
         RecyclerViewAdapterHomScreen adapter = new RecyclerViewAdapterHomScreen(this, mNames, placesInDelhi, mTime);
+        RecyclerViewAdapterHomScreen adapter1 = new RecyclerViewAdapterHomScreen(this, mmNames, rInDelhi, mTime);
         recyclerView.setAdapter(adapter);
-        recyclerView1.setAdapter(adapter);
+        recyclerView1.setAdapter(adapter1);
 
 
         recyclerView.addOnItemTouchListener(new MainHomeScreen.RecyclerTouchListener(this,
@@ -437,10 +455,23 @@ public class MainHomeScreen extends AppCompatActivity
         //  log.show();
 
         } else if (id == R.id.nav_slideshow) {
+            Intent intent = new Intent(MainHomeScreen.this,ShopDetailsActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
+
+            //MenuItem item = menu.findItem(R.id.menu_item_share);
+           // mShareActionProvider = (ShareActionProvider) R.id.nav_share.g;
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            String shareBody = "Hey I have just found the best tourism app Delhi Yatri. Please download this app and share your experience. Thank you. :)";
+            String shareSub = "Delhi Yatri Android App";
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareSub);
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+            startActivity(Intent.createChooser(sharingIntent, "Share using"));
 
         } else if (id == R.id.nav_logout) {
             mAuth.signOut();
