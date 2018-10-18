@@ -2,7 +2,9 @@ package com.example.sheetal.my.Activities;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,6 +18,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.app.AlertDialog;
 
 
 import com.example.sheetal.my.Adapters.RecyclerViewAdapterDesc;
@@ -51,8 +54,10 @@ public class DescriptionActivity extends AppCompatActivity {
     private ArrayList<String> mImageUrls = new ArrayList<>();
     private ArrayList<String> mplacesName = new ArrayList<>();
     private ArrayList<Integer> mplacesImage = new ArrayList<>();
-    private String message = " ";
+    private String message = "Hello world ";
     Integer message1 = 1;
+
+    private TextView roadTextView, metroTextView;
 
 
     @Override
@@ -60,6 +65,64 @@ public class DescriptionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
 
+
+
+        roadTextView = findViewById(R.id.textView24);
+        metroTextView = findViewById(R.id.textView25);
+        roadTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(DescriptionActivity.this);
+                builder1.setMessage("Maximum Local Transport fare is 50 indian rupee from new delhi railway station. Don't pay more than that.");
+                builder1.setCancelable(true);
+
+                builder1.setPositiveButton(
+                        "Okay",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                /*builder1.setNegativeButton(
+                        "No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });*/
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+            }
+        });
+        metroTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(DescriptionActivity.this);
+                builder1.setMessage("Maximum metro fare is 50 indian rupee from new delhi railway station. And nearest metro station is Chandani chauk.");
+                builder1.setCancelable(true);
+
+                builder1.setPositiveButton(
+                        "Okay",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+                /*builder1.setNegativeButton(
+                        "No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });*/
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+            }
+        });
 
         mapbutton = findViewById(R.id.imageButton);
         title = findViewById(R.id.textView8);
