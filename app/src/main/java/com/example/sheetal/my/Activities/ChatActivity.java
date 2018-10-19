@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AnimationUtils;
@@ -68,7 +69,6 @@ public class ChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
 
 
-
         mRootRef = FirebaseDatabase.getInstance().getReference();
         backimg = findViewById(R.id.imageView9);
         mInputMessageView = findViewById(R.id.chatText);
@@ -90,12 +90,13 @@ public class ChatActivity extends AppCompatActivity {
 
        // View view  = LayoutInflater.from(getApplication(),R.layout.dialogforusername,null);
 
+
         final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
       //  alertDialog.setContentView(R.layout.menudialog);
         alertDialog.setTitle("Delhi Yatri");
         alertDialog.setIcon(R.drawable.icon);
         alertDialog.setCancelable(true);
-        alertDialog.setMessage("Hello, welcome to the chatting section of Delhi Yatri. We request you to be humble to everyone. The use of abusive language is prohibited. For a better experience, kindly enter your name before posting. Press agree to accept our terms and conditions. thank you ! ");
+        alertDialog.setMessage("Hello, welcome to the chatting section of Delhi Yatri. We request you to be humble to everyone. The use of abusive language is prohibited. For a better experience, kindly enter your name before posting. Press agree to accept our terms and conditions. If you are chatting with others that means you accept our terms and conditions. Thank you. :) ");
         alertDialog.setButton(alertDialog.BUTTON_POSITIVE, "Agree", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -170,6 +171,17 @@ public class ChatActivity extends AppCompatActivity {
 
     }
 
+    /*@Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode==KeyEvent.KEYCODE_BACK)
+            Toast.makeText(getApplicationContext(), "Not Allowed.",
+                    Toast.LENGTH_LONG).show();
+
+        return false;
+        // Disable back button..............
+    }
+    */
+
     private void loadmessages() {
 
        mRootRef.child("messages").addChildEventListener(new ChildEventListener() {
@@ -201,6 +213,7 @@ public class ChatActivity extends AppCompatActivity {
            }
        });
     }
+
 
     private void sendMessage() {
         String message = mInputMessageView.getText().toString();
