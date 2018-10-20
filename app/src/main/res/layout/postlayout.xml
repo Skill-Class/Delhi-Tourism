@@ -5,6 +5,9 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:padding="3dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+
 
     tools:layout_editor_absoluteY="25dp">
 
