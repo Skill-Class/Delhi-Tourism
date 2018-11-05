@@ -69,7 +69,7 @@ public class AIActivity extends AppCompatActivity implements AIListener {
             createRequest();
         }
 
-        final AIConfiguration config = new AIConfiguration("eadbad295106419785f796ee3cc773bc",
+        final AIConfiguration config = new AIConfiguration("@@@@@@@@@@",
                 AIConfiguration.SupportedLanguages.English,
                 AIConfiguration.RecognitionEngine.System);
         final AIService aiService = AIService.getService(this, config);
