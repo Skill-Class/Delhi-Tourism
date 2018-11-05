@@ -27,8 +27,8 @@ public class SlideAdapter extends PagerAdapter {
 
     //Arrays
     public int[] slide_image = {
-            R.drawable.introone,
-            R.drawable.introtwo,
+            R.drawable.travel,
+            R.drawable.delhibackground,
             R.drawable.introthree
     };
 

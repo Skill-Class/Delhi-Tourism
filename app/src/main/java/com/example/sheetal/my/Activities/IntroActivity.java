@@ -15,7 +15,10 @@ import com.example.sheetal.my.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import yanzhikai.textpath.SyncTextPathView;
+
 public class IntroActivity extends AppCompatActivity {
+
 
     private ViewPager viewPager;
     private LinearLayout mDotLayout;
@@ -30,7 +33,7 @@ public class IntroActivity extends AppCompatActivity {
     private Button mPreBtn;
 
     private int mCurrentPage;
-
+private SyncTextPathView Atpv_1;
     private FirebaseAuth mAuth;
 
     @Override
@@ -51,6 +54,9 @@ public class IntroActivity extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
+        Atpv_1 = findViewById(R.id.stpv_2017);
+
+        Atpv_1.startAnimation(0,1);
 
 
         //Adding onClickListner on the Buttons
