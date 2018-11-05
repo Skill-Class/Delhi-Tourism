@@ -173,11 +173,13 @@
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="85dp"
+        android:layout_marginTop="8dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/googleSignButton"
         app:srcCompat="@drawable/bimg1" />
 
     <TextView
@@ -193,17 +195,19 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />/>
 
-    <TextView
-        android:id="@+id/testlogin"
-        android:layout_width="wrap_content"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/googleSignButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Test Login"
+        android:layout_marginRight="16dp"
+        android:padding="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+    </com.google.android.gms.common.SignInButton>
 
 </android.support.constraint.ConstraintLayout>

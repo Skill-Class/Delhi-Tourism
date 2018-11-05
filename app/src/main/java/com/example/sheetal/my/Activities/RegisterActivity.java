@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.sheetal.my.Model.Users;
 import com.example.sheetal.my.R;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -52,6 +53,8 @@ private String currentusername= null;
     private ImageView profilePic;
     private Uri resultUri = null;
     private final static int GALLERY_CODE = 1;
+    private SignInButton googleSignBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +69,7 @@ private String currentusername= null;
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
+        googleSignBtn = findViewById(R.id.googleSignButton);
 
     //    mdatabase = FirebaseDatabase.getInstance();
   //      databaseReference = mdatabase.getReference().child("MUsers");
@@ -73,8 +77,8 @@ private String currentusername= null;
 
 //        mFirebaseStorage = FirebaseStorage.getInstance().getReference().child("MBlog_Profile_Pics");
 
-        testLogin = findViewById(R.id.testlogin);
-        testLogin.setOnClickListener(new View.OnClickListener() {
+      //  testLogin = findViewById(R.id.testlogin);
+        googleSignBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RegisterActivity.this,MainHomeScreen.class);
