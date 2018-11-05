@@ -17,7 +17,10 @@ import android.widget.Toast;
 import com.example.sheetal.my.Adapters.RecyclerViewAdapterForParanoma;
 import com.example.sheetal.my.R;
 
+
 import java.util.ArrayList;
+
+import pl.rjuszczyk.panorama.viewer.PanoramaGLSurfaceView;
 
 public class ParanormaListActivity extends AppCompatActivity {
 
@@ -119,8 +122,8 @@ public class ParanormaListActivity extends AppCompatActivity {
             public void onClick(View view, final int position) {
                 Toast.makeText(ParanormaListActivity.this, "Showing Position : " + position,
                         Toast.LENGTH_SHORT).show();
-              //  Intent intent = new Intent(ParanormaListActivity.this, DescriptionActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(ParanormaListActivity.this,PanoramaGLSurfaceView.class);
+                startActivity(intent);
                 //overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
                 //  finish();
             }

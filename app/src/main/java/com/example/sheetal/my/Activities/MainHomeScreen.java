@@ -38,7 +38,7 @@ import com.example.sheetal.my.Adapters.RecyclerViewAdapterHomScreen;
 import com.example.sheetal.my.Fragments.AboutDelhiFragment;
 import com.example.sheetal.my.R;
 import com.google.firebase.auth.FirebaseAuth;
-import com.skyfishjy.library.RippleBackground;
+
 
 import java.util.ArrayList;
 
@@ -68,6 +68,8 @@ public class MainHomeScreen extends AppCompatActivity
     FloatingActionButton floatingActionButton;
     private FirebaseAuth mAuth;
 
+    FloatingActionButton floatingActionButton1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,6 +84,15 @@ public class MainHomeScreen extends AppCompatActivity
         searchTextview = findViewById(R.id.textViewl);
 
         mAuth = FirebaseAuth.getInstance();
+
+        floatingActionButton1 = findViewById(R.id.floatingActionButtonagent);
+        floatingActionButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainHomeScreen.this,AIActivity.class);
+                startActivity(intent);
+            }
+        });
 
       // Bundle bundle = new Bundle();
      //   Bundle bundle = getIntent().getExtras();
