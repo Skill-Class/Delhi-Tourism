@@ -35,11 +35,11 @@
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/backgroundsearch"
-        android:fontFamily="@font/montserrat"
+        android:background="@drawable/chatrighttext"
+        android:fontFamily="@font/prata"
         android:padding="5dp"
         android:text="Sign in"
         android:textAllCaps="false"
@@ -64,14 +64,15 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="14dp"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/prata"
         android:padding="5dp"
+        android:letterSpacing="0.03"
         android:text="Forgot password?"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textinputlayoutpassword" />
 
@@ -80,11 +81,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:fontFamily="@font/montserrat_bold"
+        android:fontFamily="@font/prata"
         android:padding="5dp"
         android:text="Don't have an account yet? Sign up here"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="14sp"
+        android:textSize="12sp"
+        android:letterSpacing="0.03"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signinbtn" />
@@ -110,11 +112,12 @@
             android:id="@+id/emailedittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/prata"
             android:hint="Enter Email"
+            android:letterSpacing="0.03"
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
-            android:textSize="14sp" />
+            android:textSize="12sp" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -137,12 +140,13 @@
             android:id="@+id/passwordEdittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/prata"
             android:hint="Enter Password"
+            android:letterSpacing="0.03"
             android:inputType="textPassword"
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
-            android:textSize="14sp" />
+            android:textSize="12sp" />
     </android.support.design.widget.TextInputLayout>
 
     <com.google.android.gms.common.SignInButton

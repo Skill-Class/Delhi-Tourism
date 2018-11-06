@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/</item>
+        <item>@font/great_vibes</item>
         <item>@font/montserrat</item>
         <item>@font/montserrat_bold</item>
+        <item>@font/prata</item>
         <item>@font/pt_mono</item>
         <item>@font/ubuntu_light</item>
         <item>@font/ubuntu_medium</item>

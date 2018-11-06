@@ -63,7 +63,7 @@ private String currentusername= null;
 
         btn = findViewById(R.id.signupbtn);
         textView = findViewById(R.id.textView10);
-        profilePic= findViewById(R.id.profilepic_imageView);
+       // profilePic= findViewById(R.id.profilepic_imageView);
 
         progressDialog = new ProgressDialog(this);
 

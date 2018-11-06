@@ -460,10 +460,13 @@ public class MainHomeScreen extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-          Toast.makeText(MainHomeScreen.this,"Hello world;",Toast.LENGTH_LONG).show();
+         // Toast.makeText(MainHomeScreen.this,"Hello world;",Toast.LENGTH_LONG).show();
         //  Dialog log  = new Dialog(this);
           //log.setContentView(R.layout.menudialog);
         //  log.show();
+            Intent intent = new Intent(MainHomeScreen.this,AboutDelhi.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 
         } else if (id == R.id.nav_slideshow) {
             Intent intent = new Intent(MainHomeScreen.this,ShopDetailsActivity.class);
@@ -471,7 +474,13 @@ public class MainHomeScreen extends AppCompatActivity
             overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 
         } else if (id == R.id.nav_manage) {
-
+            Intent intent = new Intent(MainHomeScreen.this,AccountSettingActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("userEmail", "sheetalneo@gmail.com");
+           // bundle.putInt("PlaceDesc", mDesc.get(position));
+            intent.putExtras(bundle);
+            startActivity(intent);
+            overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
         } else if (id == R.id.nav_share) {
 
             //MenuItem item = menu.findItem(R.id.menu_item_share);

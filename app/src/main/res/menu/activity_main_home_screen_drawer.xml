@@ -7,20 +7,21 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:icon="@drawable/icon"
+            android:icon="@drawable/lone"
+
             android:title="Home" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/abouticon"
             android:title="About Delhi" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/peoplechoiceicon"
             android:title="People's Choice" />
         <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Settings" />
+            android:icon="@drawable/accountinfoicon"
+            android:title="Account Info" />
     </group>
 
     <item android:title="Communicate">
@@ -31,8 +32,8 @@
                 android:title="Share" />
             <item
                 android:id="@+id/nav_logout"
-                android:icon="@drawable/ic_vpn_logout_black_24dp"
-                android:title="logout" />
+                android:icon="@drawable/logout"
+                android:title="Logout" />
         </menu>
     </item>
 

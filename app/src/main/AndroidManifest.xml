@@ -4,7 +4,7 @@
     package="com.example.sheetal.my">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -57,7 +57,9 @@
         <activity android:name=".Activities.AccountSettingActivity" />
         <activity android:name=".Activities.IntroActivity" />
         <activity android:name=".Activities.ShopDetailsActivity" />
-        <activity android:name=".Activities.AIActivity"></activity>
+        <activity android:name=".Activities.AIActivity" />
+        <activity android:name=".Activities.AboutDelhi" />
+        <activity android:name=".Activities.PanoramaViewActivity"></activity>
     </application>
 
 </manifest>
