@@ -1,14 +1,21 @@
 package com.example.sheetal.my.Activities;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -24,7 +31,9 @@ public class ShopDetailsActivity extends AppCompatActivity {
 
     ImageView backButton;
     FloatingActionButton addshopDetailsButton;
+    private Dialog ThisDialog;
 
+    private Context context;
     private ArrayList<String> shopNames = new ArrayList<>();
     private ArrayList<Integer> shopDescription = new ArrayList<>();
     private ArrayList<String> shopTiming = new ArrayList<>();
@@ -49,6 +58,26 @@ public class ShopDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(ShopDetailsActivity.this,"Details added.",Toast.LENGTH_SHORT).show();
+
+                ThisDialog = new Dialog(ShopDetailsActivity.this);
+                ThisDialog.setTitle("Save Your Name");
+                ThisDialog.setContentView(R.layout.dialogforusername);
+               // final EditText Write = (EditText)ThisDialog.findViewById(R.id.write);
+               // Button SaveMyName = (Button)ThisDialog.findViewById(R.id.SaveNow);
+
+               // Write.setEnabled(true);
+               // SaveMyName.setEnabled(true);
+
+                /*SaveMyName.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                      //  SharedPrefesSAVE(Write.getText().toString());
+                        ThisDialog.cancel();
+                    }
+                });*/
+
+                ThisDialog.show();
+
             }
         });
 
