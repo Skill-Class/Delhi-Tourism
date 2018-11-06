@@ -65,7 +65,7 @@ public class ShopDetailsActivity extends AppCompatActivity {
                 ThisDialog = new Dialog(ShopDetailsActivity.this);
                 ThisDialog.setTitle("Save Your Name");
                 ThisDialog.setContentView(R.layout.dialogforusername);
-               
+
                // final EditText Write = (EditText)ThisDialog.findViewById(R.id.write);
                // Button SaveMyName = (Button)ThisDialog.findViewById(R.id.SaveNow);
 

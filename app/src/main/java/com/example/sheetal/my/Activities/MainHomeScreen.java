@@ -487,7 +487,7 @@ public class MainHomeScreen extends AppCompatActivity
            // mShareActionProvider = (ShareActionProvider) R.id.nav_share.g;
             Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
             sharingIntent.setType("text/plain");
-            String shareBody = "Hey I have just found the best tourism app Delhi Yatri. Please download this app and share your experience. Thank you. :)";
+            String shareBody = "Hey I have developed a Delhi tourism App . Please download this app and share your experience. Thank you. :) ";
             String shareSub = "Delhi Yatri Android App";
             sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareSub);
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
