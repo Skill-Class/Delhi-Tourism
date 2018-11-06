@@ -30,6 +30,7 @@ import java.util.ArrayList;
 public class ShopDetailsActivity extends AppCompatActivity {
 
     ImageView backButton;
+    Button btn;
     FloatingActionButton addshopDetailsButton;
     private Dialog ThisDialog;
 
@@ -44,6 +45,8 @@ public class ShopDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shop_details);
 
         backButton = findViewById(R.id.imageView9);
+
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,11 +60,12 @@ public class ShopDetailsActivity extends AppCompatActivity {
         addshopDetailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ShopDetailsActivity.this,"Details added.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ShopDetailsActivity.this,"Wait.",Toast.LENGTH_SHORT).show();
 
                 ThisDialog = new Dialog(ShopDetailsActivity.this);
                 ThisDialog.setTitle("Save Your Name");
                 ThisDialog.setContentView(R.layout.dialogforusername);
+               
                // final EditText Write = (EditText)ThisDialog.findViewById(R.id.write);
                // Button SaveMyName = (Button)ThisDialog.findViewById(R.id.SaveNow);
 
