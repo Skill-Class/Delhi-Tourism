@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.sheetal.my"
-        minSdkVersion 16
+        minSdkVersion 18
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -53,6 +53,9 @@ dependencies {
     implementation 'com.android.support:design:28.0.0-rc01'
 
     compile 'com.gjiazhe:PanoramaImageView:1.0'
+
+    //crisp chat dependency
+    compile 'im.crisp:crisp-sdk:0.1.10'
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -47,7 +47,6 @@ public class LoginActivity extends AppCompatActivity {
         passwordtext =findViewById(R.id.textinputlayoutpassword);
 
 
-
         progressDialog = new ProgressDialog(this);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override

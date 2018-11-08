@@ -45,7 +45,7 @@ public class HomescreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
 
-    textView = findViewById(R.id.textView8);
+        textView = findViewById(R.id.textView8);
 
         Bundle bundle = getIntent().getExtras();
         String message = bundle.getString("Top Bar Value");
@@ -56,7 +56,7 @@ public class HomescreenActivity extends AppCompatActivity {
         backimg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomescreenActivity.this,MainHomeScreen.class);
+                Intent intent = new Intent(HomescreenActivity.this, MainHomeScreen.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             }
@@ -80,7 +80,6 @@ public class HomescreenActivity extends AppCompatActivity {
 
         getImages();
     }
-
 
 
     private void getImages() {
@@ -131,12 +130,10 @@ public class HomescreenActivity extends AppCompatActivity {
         mImageUrls.add("https://i.redd.it/j6myfqglup501.jpg");
 
 
-
         mImageUrls.add("https://i.redd.it/0h2gm1ix6p501.jpg");
 
 
         mImageUrls.add("https://i.redd.it/k98uzl68eh501.jpg");
-
 
 
         mImageUrls.add("https://i.redd.it/glin0nwndo501.jpg");
@@ -173,15 +170,15 @@ public class HomescreenActivity extends AppCompatActivity {
                 recyclerView, new ClickListener() {
             @Override
             public void onClick(View view, final int position) {
-              //  Toast.makeText(HomescreenActivity.this, "Showing Position : " + position,
+                //  Toast.makeText(HomescreenActivity.this, "Showing Position : " + position,
                 //        Toast.LENGTH_SHORT).show();
                 // progressDialog.setTitle("Delhi Yatri");
-                  progressDialog.setMessage(" Please wait..");
-                  progressDialog.show();
+                progressDialog.setMessage(" Please wait..");
+                progressDialog.show();
                 Intent intent = new Intent(HomescreenActivity.this, DescriptionActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("PlacePosition", mNames.get(position));
-                bundle.putInt("PlaceDesc",mDesc.get(position));
+                bundle.putInt("PlaceDesc", mDesc.get(position));
                 intent.putExtras(bundle);
                 //intent.putExtra("PlacePosition",position);
                 startActivity(intent);

@@ -33,7 +33,7 @@ public class IntroActivity extends AppCompatActivity {
     private Button mPreBtn;
 
     private int mCurrentPage;
-private SyncTextPathView Atpv_1;
+    private SyncTextPathView Atpv_1;
     private FirebaseAuth mAuth;
 
     @Override
@@ -56,7 +56,7 @@ private SyncTextPathView Atpv_1;
         mAuth = FirebaseAuth.getInstance();
         Atpv_1 = findViewById(R.id.stpv_2017);
 
-        Atpv_1.startAnimation(0,1);
+        Atpv_1.startAnimation(0, 1);
 
 
         //Adding onClickListner on the Buttons

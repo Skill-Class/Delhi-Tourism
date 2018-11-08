@@ -114,16 +114,16 @@ public class ShopDetailsActivity extends AppCompatActivity {
         shopDescription.add(R.string.rashtrapatibhawan);
         shopDescription.add(R.string.rashtrapatibhawan);
 
-        shopTiming.add("11 AM to 11 PM");
-        shopTiming.add("11 AM to 11 PM");
-        shopTiming.add("11 AM to 11 PM");
-        shopTiming.add("11 AM to 11 PM");
-        shopTiming.add("11 AM to 11 PM");
-        shopTiming.add("11 AM to 11 PM");
-        shopTiming.add("11 AM to 11 PM");
-        shopTiming.add("11 AM to 11 PM");
-        shopTiming.add("11 AM to 11 PM");
-        shopTiming.add("11 AM to 11 PM");
+        shopTiming.add("11 AM to 5 PM");
+        shopTiming.add("10 AM to 5 PM");
+        shopTiming.add("2 AM to 3 PM");
+        shopTiming.add("12 AM to 11 PM");
+        shopTiming.add("04 AM to 4 PM");
+        shopTiming.add("1 AM to 2 PM");
+        shopTiming.add("03 AM to 6 PM");
+        shopTiming.add("02 AM to 7 PM");
+        shopTiming.add("11 AM to 5 PM");
+        shopTiming.add("01 AM to 11 PM");
 
 
         initRecyclerView();

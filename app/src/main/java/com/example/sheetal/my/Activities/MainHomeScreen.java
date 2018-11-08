@@ -497,10 +497,16 @@ public class MainHomeScreen extends AppCompatActivity
             mAuth.signOut();
             Intent intent = new Intent (MainHomeScreen.this,LoginActivity.class);
             startActivity(intent);
+            overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             return true;
 
+        }else if (id == R.id.nav_chat) {
+            mAuth.signOut();
+            Intent intent = new Intent(MainHomeScreen.this, ChatWithUsActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+            return true;
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

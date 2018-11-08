@@ -27,6 +27,10 @@
     <item android:title="Communicate">
         <menu>
             <item
+                android:id="@+id/nav_chat"
+                android:icon="@drawable/ic_question_answer_black_24dp"
+                android:title="Chat with Us" />
+            <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
                 android:title="Share" />

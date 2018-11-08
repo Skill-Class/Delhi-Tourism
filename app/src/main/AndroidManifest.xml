@@ -59,7 +59,8 @@
         <activity android:name=".Activities.ShopDetailsActivity" />
         <activity android:name=".Activities.AIActivity" />
         <activity android:name=".Activities.AboutDelhi" />
-        <activity android:name=".Activities.PanoramaViewActivity"></activity>
+        <activity android:name=".Activities.PanoramaViewActivity" />
+        <activity android:name=".Activities.ChatWithUsActivity"></activity>
     </application>
 
 </manifest>

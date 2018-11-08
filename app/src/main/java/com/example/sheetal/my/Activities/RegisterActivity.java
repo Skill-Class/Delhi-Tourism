@@ -171,7 +171,7 @@ private String currentusername= null;
         }
     }
 
-*/ // account with iamge ends here.
+*/ // account with image ends here.
 
 
     // working code starts here.
