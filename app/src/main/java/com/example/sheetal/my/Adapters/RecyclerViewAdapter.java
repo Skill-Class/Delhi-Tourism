@@ -47,7 +47,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         holder.name.setText(mNames.get(position));
         // holder.time.setText(mTime.get(position));
-
         // Glide.with(mContext).asBitmap().load(mImageUrls.get(position)).into(holder.image);
         holder.image.setImageResource(mImageUrls.get(position));
 
