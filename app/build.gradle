@@ -53,7 +53,7 @@ dependencies {
 
     compile 'com.gjiazhe:PanoramaImageView:1.0'
 
-   
+
 
     //crisp chat dependency
     compile 'im.crisp:crisp-sdk:0.1.10'
