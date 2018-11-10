@@ -48,6 +48,7 @@ public class RecyclerViewForReviews extends RecyclerView.Adapter<RecyclerViewFor
 
 
     }
+
     @Override
     public int getItemCount() {
         return mMessageList.size();

@@ -40,9 +40,9 @@ public class RecyclerViewAdapterForChat extends RecyclerView.Adapter<RecyclerVie
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
 
-    public RecyclerViewAdapterForChat(List<ChatData> mMessageList ) {
+    public RecyclerViewAdapterForChat(List<ChatData> mMessageList) {
         //this.mChat = mChat;
-       // this.userId = userId;
+        // this.userId = userId;
         //this.mContext = mContext;
         this.mMessageList = mMessageList;
     }
@@ -51,17 +51,17 @@ public class RecyclerViewAdapterForChat extends RecyclerView.Adapter<RecyclerVie
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-      //  int VIEW_TYPE;
-      //  if (viewType == 1) {
+        //  int VIEW_TYPE;
+        //  if (viewType == 1) {
 
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_send_message, parent, false);
-            return new ViewHolder(view);
-       // } else {
-         //    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_received_message, parent, false);
-           //  return new ViewHolder(view);
-            //   }
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_send_message, parent, false);
+        return new ViewHolder(view);
+        // } else {
+        //    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_received_message, parent, false);
+        //  return new ViewHolder(view);
+        //   }
 
-            //  return new ViewHolder(view,viewType);
+        //  return new ViewHolder(view,viewType);
         //}
     }
 
@@ -73,10 +73,9 @@ public class RecyclerViewAdapterForChat extends RecyclerView.Adapter<RecyclerVie
         ChatData c = mMessageList.get(position);
         mAuth = FirebaseAuth.getInstance();
 
-       // Bundle bundle = ;
+        // Bundle bundle = ;
         //String message = bundle.getString("Top Bar Value");
-       // holder.SenderName.setText(message);
-
+        // holder.SenderName.setText(message);
 
 
         java.text.DateFormat dateFormat = java.text.DateFormat.getDateInstance();
@@ -85,35 +84,36 @@ public class RecyclerViewAdapterForChat extends RecyclerView.Adapter<RecyclerVie
 
         String current_user_id = mAuth.getCurrentUser().getUid();
         String from_user = c.getUserId();
-        if (from_user.equals(current_user_id)){
-           holder.chattext.setBackgroundResource(R.drawable.chatrighttext);
-           holder.chattext.setText(c.getChatMessage());
-           holder.SenderName.setText(c.getUserName());
-           holder.timeTextView.setText(formattedDate);
-        }else{
-           holder.chattext.setBackgroundResource(R.drawable.chatrighttextone);
+        if (from_user.equals(current_user_id)) {
+            holder.chattext.setBackgroundResource(R.drawable.chatrighttext);
+            holder.chattext.setText(c.getChatMessage());
+            holder.SenderName.setText(c.getUserName());
+            holder.timeTextView.setText(formattedDate);
+        } else {
+            holder.chattext.setBackgroundResource(R.drawable.chatrighttextone);
             holder.chattext.setText(c.getChatMessage());
             holder.SenderName.setText(c.getUserName());
             holder.timeTextView.setText(formattedDate);
         }
-   //   holder.chattext.setText(c.getChatMessage());
+        //   holder.chattext.setText(c.getChatMessage());
 
     }
-/*
-    @Override
-    public int getItemViewType(int position) {
-//        mUser = mAuth.getCurrentUser();
-        String current_user_id = mAuth.getCurrentUser().getUid();
-        ChatData chatData = mMessageList.get(position);
-        String from_user = chatData.getUserId();
-        if(from_user.equals(current_user_id)){
-            return 1;
-        }else {
-            return 0;
+
+    /*
+        @Override
+        public int getItemViewType(int position) {
+    //        mUser = mAuth.getCurrentUser();
+            String current_user_id = mAuth.getCurrentUser().getUid();
+            ChatData chatData = mMessageList.get(position);
+            String from_user = chatData.getUserId();
+            if(from_user.equals(current_user_id)){
+                return 1;
+            }else {
+                return 0;
+            }
+
         }
-
-    }
-*/
+    */
     @Override
     public int getItemCount() {
         return mMessageList.size();
@@ -132,8 +132,8 @@ public class RecyclerViewAdapterForChat extends RecyclerView.Adapter<RecyclerVie
             left_image = itemView.findViewById(R.id.image_right);
             chattext = itemView.findViewById(R.id.textView19);
             //     right_image = itemView.findViewById(R.id.image_right);
-               SenderName = itemView.findViewById(R.id.sender_name);
-                timeTextView = itemView.findViewById(R.id.time_textView);
+            SenderName = itemView.findViewById(R.id.sender_name);
+            timeTextView = itemView.findViewById(R.id.time_textView);
         }
     }
 }

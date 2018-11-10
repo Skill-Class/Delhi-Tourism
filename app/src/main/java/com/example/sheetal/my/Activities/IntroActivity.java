@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -25,6 +27,9 @@ public class IntroActivity extends AppCompatActivity {
     private TextView[] mDots;
     public TextView textViewLang;
     public TextView h;
+    public TextView thankyoutext,textView,lovetext;
+
+
     public TextView e;
 
     private SlideAdapter sliderAdapter;
@@ -49,14 +54,26 @@ public class IntroActivity extends AppCompatActivity {
         sliderAdapter = new SlideAdapter(this);
         viewPager.setAdapter(sliderAdapter);
 
+        thankyoutext = findViewById(R.id.textView29);
+        textView = findViewById(R.id.textView30);
+        lovetext = findViewById(R.id.loveText);
+
+
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.movefromleft);
+        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.movesearch);
+
+        thankyoutext.startAnimation(animation);
+        textView.startAnimation(animation);
+        lovetext.startAnimation(animation1);
+
         addDotsIndicator(0);
         viewPager.addOnPageChangeListener(viewListner);
 
 
         mAuth = FirebaseAuth.getInstance();
-        Atpv_1 = findViewById(R.id.stpv_2017);
+       // Atpv_1 = findViewById(R.id.stpv_2017);
 
-        Atpv_1.startAnimation(0, 1);
+       // Atpv_1.startAnimation(0, 1);
 
 
         //Adding onClickListner on the Buttons
@@ -133,6 +150,7 @@ public class IntroActivity extends AppCompatActivity {
 
                 mNextBtn.setText("Next");
                 mPreBtn.setText("");
+
 
             } else if (position == mDots.length - 1) {
                 mNextBtn.setEnabled(true);

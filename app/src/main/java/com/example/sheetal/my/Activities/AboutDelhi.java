@@ -18,15 +18,15 @@ public class AboutDelhi extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_delhi);
 
-    back_button = findViewById(R.id.imageView9);
-    back_button.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(AboutDelhi.this,MainHomeScreen.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
-        }
-    });
+        back_button = findViewById(R.id.imageView9);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AboutDelhi.this, MainHomeScreen.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+            }
+        });
 
     }
 }

@@ -42,12 +42,12 @@ public class RecyclerViewAdapterHomScreen extends RecyclerView.Adapter<RecyclerV
     public void onBindViewHolder(ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder: called.");
 
-     //  holder.image.setImageResource(mImageUrls.get(position));
+        //  holder.image.setImageResource(mImageUrls.get(position));
 
         holder.name.setText(mNames.get(position));
         holder.time.setText(mTime.get(position));
 
-     //   Glide.with(mContext).asBitmap().load(mImageUrls.get(position)).into(holder.image);
+        //   Glide.with(mContext).asBitmap().load(mImageUrls.get(position)).into(holder.image);
         holder.image.setImageResource(mImageUrls.get(position));
 
         holder.name.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +64,7 @@ public class RecyclerViewAdapterHomScreen extends RecyclerView.Adapter<RecyclerV
         return mImageUrls.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView image;
         TextView name;
@@ -72,7 +72,7 @@ public class RecyclerViewAdapterHomScreen extends RecyclerView.Adapter<RecyclerV
 
         public ViewHolder(View itemView) {
             super(itemView);
-             image = itemView.findViewById(R.id.imageView);
+            image = itemView.findViewById(R.id.imageView);
             name = itemView.findViewById(R.id.textView2);
             time = itemView.findViewById(R.id.textView3);
         }

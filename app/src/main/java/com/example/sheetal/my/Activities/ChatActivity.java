@@ -74,25 +74,25 @@ public class ChatActivity extends AppCompatActivity {
         mInputMessageView = findViewById(R.id.chatText);
         userName = findViewById(R.id.textView8);
 
-      //  Dialog dialog = new Dialog(this);
-       // dialog.setContentView(R.layout.menudialog);
-       // dialog.show();
-      //  final String username = userName.getText().toString();
-      //  sendname = findViewById(R.id.name_edittext_btn);
+        //  Dialog dialog = new Dialog(this);
+        // dialog.setContentView(R.layout.menudialog);
+        // dialog.show();
+        //  final String username = userName.getText().toString();
+        //  sendname = findViewById(R.id.name_edittext_btn);
 
         //Bundle bundle = getIntent().getExtras();
-       // final String currentusername = bundle.getString("UserName");
+        // final String currentusername = bundle.getString("UserName");
         //textView.setText(message);
-       //userName.setText(currentusername);
+        //userName.setText(currentusername);
 
 // adding dialog
 
 
-       // View view  = LayoutInflater.from(getApplication(),R.layout.dialogforusername,null);
+        // View view  = LayoutInflater.from(getApplication(),R.layout.dialogforusername,null);
 
 
         final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-      //  alertDialog.setContentView(R.layout.menudialog);
+        //  alertDialog.setContentView(R.layout.menudialog);
         alertDialog.setTitle("Delhi Yatri");
         alertDialog.setIcon(R.drawable.icon);
         alertDialog.setCancelable(true);
@@ -106,8 +106,8 @@ public class ChatActivity extends AppCompatActivity {
         alertDialog.setButton(alertDialog.BUTTON_NEGATIVE, "Not Agree", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(ChatActivity.this,"Sorry. we can not allow you to post anything until you do not accept our terms and conditions.!",Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(ChatActivity.this,MainHomeScreen.class);
+                Toast.makeText(ChatActivity.this, "Sorry. we can not allow you to post anything until you do not accept our terms and conditions.!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(ChatActivity.this, MainHomeScreen.class);
                 startActivity(intent);
                 finish();
             }
@@ -119,7 +119,7 @@ public class ChatActivity extends AppCompatActivity {
 
         mAdapter = new RecyclerViewAdapterForChat(mMessagesList);
         recyclerView = findViewById(R.id.recyclerView);
-        linearLayoutManager=new LinearLayoutManager(this);
+        linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(mAdapter);
@@ -162,12 +162,12 @@ public class ChatActivity extends AppCompatActivity {
 
         // working code before firebase database
 
-     //   LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-    //    LinearLayout layoutManager = new LinearLayout(this);
-     //   RecyclerView recyclerView = findViewById(R.id.recyclerView);
-      //  RecyclerViewAdapterForChat adapter = new RecyclerViewAdapterForChat(mchat, this, chatuserid);
-      //  recyclerView.setAdapter(adapter);
-       // recyclerView.setLayoutManager(layoutManager);
+        //   LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        //    LinearLayout layoutManager = new LinearLayout(this);
+        //   RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        //  RecyclerViewAdapterForChat adapter = new RecyclerViewAdapterForChat(mchat, this, chatuserid);
+        //  recyclerView.setAdapter(adapter);
+        // recyclerView.setLayoutManager(layoutManager);
 
     }
 
@@ -184,34 +184,34 @@ public class ChatActivity extends AppCompatActivity {
 
     private void loadmessages() {
 
-       mRootRef.child("messages").addChildEventListener(new ChildEventListener() {
-           @Override
-           public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-               mMessagesList.add(dataSnapshot.getValue(ChatData.class));
-               mAdapter.notifyDataSetChanged();
-               recyclerView.scrollToPosition(mMessagesList.size()-1);
-           }
+        mRootRef.child("messages").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                mMessagesList.add(dataSnapshot.getValue(ChatData.class));
+                mAdapter.notifyDataSetChanged();
+                recyclerView.scrollToPosition(mMessagesList.size() - 1);
+            }
 
-           @Override
-           public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
-           }
+            }
 
-           @Override
-           public void onChildRemoved(DataSnapshot dataSnapshot) {
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
 
-           }
+            }
 
-           @Override
-           public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
-           }
+            }
 
-           @Override
-           public void onCancelled(DatabaseError databaseError) {
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-           }
-       });
+            }
+        });
     }
 
 
@@ -222,10 +222,10 @@ public class ChatActivity extends AppCompatActivity {
             DatabaseReference user_message_push = mRootRef.child("messages").push();
             String push_id = user_message_push.getKey();
 
-         //   DatabaseReference current_user_emailid = mRootRef.child("Users").child(mCurrentUserId);
-          //  DatabaseReference u
+            //   DatabaseReference current_user_emailid = mRootRef.child("Users").child(mCurrentUserId);
+            //  DatabaseReference u
 
-            ChatData chatData = new ChatData("chatMessage", "userId","userName","timestamp");
+            ChatData chatData = new ChatData("chatMessage", "userId", "userName", "timestamp");
 
             DatabaseReference newPost = user_message_push;
 

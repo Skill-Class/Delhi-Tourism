@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     FirebaseUser mUser;
     FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.textView);
         searchimg = findViewById(R.id.imageView);
-     //
+        //
 
-        mAuth  = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         //getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         if (currentUser != null) {
             senttomain();
             finish();
-        }else{
+        } else {
             final Intent intent = new Intent(this, IntroActivity.class);
             Thread timer = new Thread() {
                 @Override

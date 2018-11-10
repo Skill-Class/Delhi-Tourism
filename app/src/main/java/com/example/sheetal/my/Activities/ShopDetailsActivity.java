@@ -60,17 +60,17 @@ public class ShopDetailsActivity extends AppCompatActivity {
         addshopDetailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ShopDetailsActivity.this,"Wait.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ShopDetailsActivity.this, "Wait.", Toast.LENGTH_SHORT).show();
 
                 ThisDialog = new Dialog(ShopDetailsActivity.this);
                 ThisDialog.setTitle("Save Your Name");
                 ThisDialog.setContentView(R.layout.dialogforusername);
 
-               // final EditText Write = (EditText)ThisDialog.findViewById(R.id.write);
-               // Button SaveMyName = (Button)ThisDialog.findViewById(R.id.SaveNow);
+                // final EditText Write = (EditText)ThisDialog.findViewById(R.id.write);
+                // Button SaveMyName = (Button)ThisDialog.findViewById(R.id.SaveNow);
 
-               // Write.setEnabled(true);
-               // SaveMyName.setEnabled(true);
+                // Write.setEnabled(true);
+                // SaveMyName.setEnabled(true);
 
                 /*SaveMyName.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -89,8 +89,7 @@ public class ShopDetailsActivity extends AppCompatActivity {
 
     }
 
-    private void getDetails()
-    {
+    private void getDetails() {
         shopNames.add("Jama Masjid");
         shopNames.add("Chandani Chauk");
         shopNames.add("Indira Gandhi Memorial");
@@ -141,7 +140,7 @@ public class ShopDetailsActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(layoutManager);
 
-        RecyclerViewAdapterForShops adapter = new RecyclerViewAdapterForShops(this, shopNames, shopDescription,shopTiming);
+        RecyclerViewAdapterForShops adapter = new RecyclerViewAdapterForShops(this, shopNames, shopDescription, shopTiming);
         recyclerView.setAdapter(adapter);
     }
 

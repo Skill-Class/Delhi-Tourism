@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.example.sheetal.my.R;
 
-public class  BottomSheetDialog extends BottomSheetDialogFragment {
+public class BottomSheetDialog extends BottomSheetDialogFragment {
 
     // vars
     private TextView topPlace;

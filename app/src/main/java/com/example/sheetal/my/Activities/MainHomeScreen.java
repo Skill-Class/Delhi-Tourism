@@ -35,7 +35,6 @@ import android.widget.ViewFlipper;
 
 import com.example.sheetal.my.Adapters.RecyclerViewAdapter;
 import com.example.sheetal.my.Adapters.RecyclerViewAdapterHomScreen;
-import com.example.sheetal.my.Fragments.AboutDelhiFragment;
 import com.example.sheetal.my.R;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -48,11 +47,11 @@ public class MainHomeScreen extends AppCompatActivity
     private static final String TAG = "MainActivity";
     private ViewFlipper viewFlipper;
 
-    private ImageView imgView,ChatImageView;
+    private ImageView imgView, ChatImageView;
     private CardView cardView;
 
     private TextView viewallone;
-    private TextView viewalltwo,searchTextview;
+    private TextView viewalltwo, searchTextview;
     private android.widget.ShareActionProvider mShareActionProvider;
 
 
@@ -89,36 +88,34 @@ public class MainHomeScreen extends AppCompatActivity
         floatingActionButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainHomeScreen.this,AIActivity.class);
+                Intent intent = new Intent(MainHomeScreen.this, AIActivity.class);
                 startActivity(intent);
             }
         });
 
-      // Bundle bundle = new Bundle();
-     //   Bundle bundle = getIntent().getExtras();
-     //   final String currentusername = bundle.getString("UserName");
+        // Bundle bundle = new Bundle();
+        //   Bundle bundle = getIntent().getExtras();
+        //   final String currentusername = bundle.getString("UserName");
         //textView.setText(message);
 
 
-
-
         ChatImageView.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent intent = new Intent(MainHomeScreen.this,ChatActivity.class);
-            //   Intent intent = new Intent(RegisterActivity.this, MainHomeScreen.class);
-             //  Bundle bundle1 = new Bundle();
-              // bundle1.putString("UserName",currentusername);
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainHomeScreen.this, ChatActivity.class);
+                //   Intent intent = new Intent(RegisterActivity.this, MainHomeScreen.class);
+                //  Bundle bundle1 = new Bundle();
+                // bundle1.putString("UserName",currentusername);
 
-               startActivity(intent);
-               overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
-           }
-       });
+                startActivity(intent);
+                overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+            }
+        });
 
         searchTextview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainHomeScreen.this,ParanormaListActivity.class);
+                Intent intent = new Intent(MainHomeScreen.this, ParanormaListActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             }
@@ -177,7 +174,6 @@ public class MainHomeScreen extends AppCompatActivity
         //  for(int image :images){
         //    flipperImages(image);
         // }
-
 
 
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -460,31 +456,31 @@ public class MainHomeScreen extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-         // Toast.makeText(MainHomeScreen.this,"Hello world;",Toast.LENGTH_LONG).show();
-        //  Dialog log  = new Dialog(this);
-          //log.setContentView(R.layout.menudialog);
-        //  log.show();
-            Intent intent = new Intent(MainHomeScreen.this,AboutDelhi.class);
+            // Toast.makeText(MainHomeScreen.this,"Hello world;",Toast.LENGTH_LONG).show();
+            //  Dialog log  = new Dialog(this);
+            //log.setContentView(R.layout.menudialog);
+            //  log.show();
+            Intent intent = new Intent(MainHomeScreen.this, AboutDelhi.class);
             startActivity(intent);
             overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 
         } else if (id == R.id.nav_slideshow) {
-            Intent intent = new Intent(MainHomeScreen.this,ShopDetailsActivity.class);
+            Intent intent = new Intent(MainHomeScreen.this, ShopDetailsActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
 
         } else if (id == R.id.nav_manage) {
-            Intent intent = new Intent(MainHomeScreen.this,AccountSettingActivity.class);
+            Intent intent = new Intent(MainHomeScreen.this, AccountSettingActivity.class);
             Bundle bundle = new Bundle();
             bundle.putString("userEmail", "sheetalneo@gmail.com");
-           // bundle.putInt("PlaceDesc", mDesc.get(position));
+            // bundle.putInt("PlaceDesc", mDesc.get(position));
             intent.putExtras(bundle);
             startActivity(intent);
             overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
         } else if (id == R.id.nav_share) {
 
             //MenuItem item = menu.findItem(R.id.menu_item_share);
-           // mShareActionProvider = (ShareActionProvider) R.id.nav_share.g;
+            // mShareActionProvider = (ShareActionProvider) R.id.nav_share.g;
             Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
             sharingIntent.setType("text/plain");
             String shareBody = "Hey I have developed a Delhi tourism App . Please download this app and share your experience. Thank you. :) ";
@@ -495,12 +491,12 @@ public class MainHomeScreen extends AppCompatActivity
 
         } else if (id == R.id.nav_logout) {
             mAuth.signOut();
-            Intent intent = new Intent (MainHomeScreen.this,LoginActivity.class);
+            Intent intent = new Intent(MainHomeScreen.this, LoginActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             return true;
 
-        }else if (id == R.id.nav_chat) {
+        } else if (id == R.id.nav_chat) {
             mAuth.signOut();
             Intent intent = new Intent(MainHomeScreen.this, ChatWithUsActivity.class);
             startActivity(intent);

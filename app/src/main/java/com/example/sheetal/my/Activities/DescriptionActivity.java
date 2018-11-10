@@ -36,7 +36,7 @@ public class DescriptionActivity extends AppCompatActivity {
      * Sheetal kumar | Delhi Yatri |  Software engineering project | Date -  18 aug 2018
      * */
     //vars
-    
+
     //Meghna| hello
     private Context ctx;
     private ImageView backbtn;
@@ -44,7 +44,7 @@ public class DescriptionActivity extends AppCompatActivity {
     private ImageView imageView;
     private ImageButton mapbutton;
 
-    private TextView placeName, placeDesc, title,rateTextView,reviewTextView;
+    private TextView placeName, placeDesc, title, rateTextView, reviewTextView;
 
     private RecyclerView recyclerView;
     private TextView favText;
@@ -64,7 +64,6 @@ public class DescriptionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
-
 
 
         roadTextView = findViewById(R.id.textView24);
@@ -131,8 +130,8 @@ public class DescriptionActivity extends AppCompatActivity {
         placeName = findViewById(R.id.textView3);
         placeDesc = findViewById(R.id.textView7);
         // sample code snippet to set the text content on the ExpandableTextView
-      // ExpandableTextView expTv1 = findViewById(R.id.expand_text_view);
-      // expTv1.setText(getString(R.string.dummytextshort));
+        // ExpandableTextView expTv1 = findViewById(R.id.expand_text_view);
+        // expTv1.setText(getString(R.string.dummytextshort));
         favText = findViewById(R.id.favText);
         rateTextView = findViewById(R.id.textView4254);
         reviewTextView = findViewById(R.id.textView4);
@@ -143,18 +142,18 @@ public class DescriptionActivity extends AppCompatActivity {
 
                 BottomSheetDiloagForReviews bottomSheetDialog = new BottomSheetDiloagForReviews();
                 bottomSheetDialog.show(getSupportFragmentManager(), "examplebottmsheetal");
-               // bottomSheetDialog.se
+                // bottomSheetDialog.se
             }
         });
         rateTextView.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
-                if (rateTextView.getText().toString().equals("Rate Now")){
+                if (rateTextView.getText().toString().equals("Rate Now")) {
                     rateTextView.setText("Already Rated");
                     //   favText.setBackgroundResource(R.drawable.ratetextback);
                     // favText.setBackgroundResource(R.color.colorPrimaryDark);
-                }else{
+                } else {
                     rateTextView.setText("Rate Now");
                     //  favText.setBackgroundResource(R.drawable.ratetextback);
                 }
@@ -165,17 +164,16 @@ public class DescriptionActivity extends AppCompatActivity {
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
-                if (favText.getText().toString().equals("Add Favorite")){
+                if (favText.getText().toString().equals("Add Favorite")) {
                     favText.setText("Added to Favorite");
-                 //   favText.setBackgroundResource(R.drawable.ratetextback);
-                   // favText.setBackgroundResource(R.color.colorPrimaryDark);
-                }else{
+                    //   favText.setBackgroundResource(R.drawable.ratetextback);
+                    // favText.setBackgroundResource(R.color.colorPrimaryDark);
+                } else {
                     favText.setText("Add Favorite");
-                  //  favText.setBackgroundResource(R.drawable.ratetextback);
+                    //  favText.setBackgroundResource(R.drawable.ratetextback);
                 }
             }
         });
-
 
 
 // IMPORTANT - call setText on the ExpandableTextView to set the text content to display
@@ -185,7 +183,7 @@ public class DescriptionActivity extends AppCompatActivity {
         mapbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DescriptionActivity.this,ChatActivity.class);
+                Intent intent = new Intent(DescriptionActivity.this, ChatActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             }
@@ -201,21 +199,21 @@ public class DescriptionActivity extends AppCompatActivity {
 
         title.setText("Delhi Yatri");
 
-      //  String activityName = getIntent().getStringExtra("PARENT_ACTIVITY_REF");
+        //  String activityName = getIntent().getStringExtra("PARENT_ACTIVITY_REF");
    /*     if (activityName.equals("parent")){
             Bundle bundle = getIntent().getExtras();
             String message = bundle.getString("PlacePosition");
             placeName.setText(message);
         }else {
 */            //getting data from homescreen activity
-            Bundle bundle = getIntent().getExtras();
-            String message = bundle.getString("PlacePosition");
-            Integer message1 = bundle.getInt("PlaceDesc");
+        Bundle bundle = getIntent().getExtras();
+        String message = bundle.getString("PlacePosition");
+        Integer message1 = bundle.getInt("PlaceDesc");
 
-                placeName.setText(message);
-                placeDesc.setText(message1);
+        placeName.setText(message);
+        placeDesc.setText(message1);
 
-  //      }
+        //      }
         // getting images data
         getImages();
     }
@@ -356,7 +354,7 @@ public class DescriptionActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
                 //Intent intent = new Intent(DescriptionActivity.this, HomescreenActivity.class);
                 //startActivity(intent);
-               // overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+                // overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             }
         }));
 

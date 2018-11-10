@@ -38,13 +38,13 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        firebaseDatabase  = FirebaseDatabase.getInstance();
-     //   databaseReferenceroot = firebaseDatabase.getReference();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        //   databaseReferenceroot = firebaseDatabase.getReference();
 
         btn = findViewById(R.id.signinbtn);
         textView = findViewById(R.id.textView10);
         emailtext = findViewById(R.id.textInputLayoutemail);
-        passwordtext =findViewById(R.id.textinputlayoutpassword);
+        passwordtext = findViewById(R.id.textinputlayoutpassword);
 
 
         progressDialog = new ProgressDialog(this);
@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(LoginActivity.this,"Please wait..",Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Please wait..", Toast.LENGTH_SHORT).show();
                 String email = emailtext.getEditText().getText().toString().trim();
                 String password = passwordtext.getEditText().getText().toString().trim();
 

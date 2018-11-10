@@ -23,7 +23,7 @@ import com.example.sheetal.my.R;
 
 import java.util.ArrayList;
 
-public class BottomSheetDiloagForReviews extends BottomSheetDialogFragment{
+public class BottomSheetDiloagForReviews extends BottomSheetDialogFragment {
 
 
     // vars
@@ -51,13 +51,13 @@ public class BottomSheetDiloagForReviews extends BottomSheetDialogFragment{
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
 
-    //   LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        //   LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
 
-      //  LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext().getApplicationContext());
-       // recyclerView.setLayoutManager(layoutManager);
+        //  LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext().getApplicationContext());
+        // recyclerView.setLayoutManager(layoutManager);
 
 //        RecyclerViewForReviews adapter = new RecyclerViewForReviews(this, mNames);
-  //      recyclerView.setAdapter(adapter);
+        //      recyclerView.setAdapter(adapter);
 
         reviewText = view.findViewById(R.id.textView28);
         sendbtn = view.findViewById(R.id.imageView13);

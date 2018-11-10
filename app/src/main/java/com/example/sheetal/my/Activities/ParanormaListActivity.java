@@ -121,7 +121,7 @@ public class ParanormaListActivity extends AppCompatActivity {
             public void onClick(View view, final int position) {
                 Toast.makeText(ParanormaListActivity.this, "Showing Position : " + position,
                         Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ParanormaListActivity.this,PanoramaViewActivity.class);
+                Intent intent = new Intent(ParanormaListActivity.this, PanoramaViewActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
                 //overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);

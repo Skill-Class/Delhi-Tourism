@@ -15,24 +15,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cbackground"/>
 
         <TextView
             android:id="@+id/textView29"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginTop="64dp"
             android:fontFamily="@font/prata"
-            android:paddingTop="16dp"
-            android:text="Software Engineering Project"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:textSize="14sp"
-            android:letterSpacing="0.03"
+            android:gravity="center"
+            android:letterSpacing="0.09"
+            android:text="Thank you"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.78"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,111 +43,36 @@
             android:id="@+id/textView30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
             android:fontFamily="@font/prata"
-            android:text="Department of Computer Science, University of Delhi."
-            android:textAlignment="center"
-            android:textColor="#ffffff"
+            android:letterSpacing="0.09"
+            android:text="for being a part of our day."
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="12sp"
-            android:letterSpacing="0.03"
-            android:textStyle="normal"
+            android:textStyle="italic"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.79"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
-
-        <View
-            android:id="@+id/view2"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:background="#ffff"
-            android:padding="16dp"
-
+        <TextView
+            android:id="@+id/loveText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:fontFamily="@font/prata"
+            android:gravity="center_horizontal"
+            android:letterSpacing="0.09"
+            android:text="Love, \n Delhi Yatri Team"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"
+            android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.723"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView30" />
-
-        <TextView
-            android:id="@+id/textView35"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:fontFamily="@font/prata"
-            android:text="App Developer - Sheetal Kumar (35) "
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:textSize="12sp"
-            android:letterSpacing="0.03"
-            android:textStyle="normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view2" />
-
-        <TextView
-            android:id="@+id/textView31"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:fontFamily="@font/prata"
-            android:text="Content Writer - Meghna Agarawal (20)"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:textSize="12sp"
-            android:letterSpacing="0.03"
-            android:textStyle="normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView35" />
-
-        <TextView
-            android:id="@+id/textView36"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:fontFamily="@font/prata"
-            android:text="Project Mentor - Ronnie Chakre "
-            android:textAlignment="center"
-            android:letterSpacing="0.03"
-            android:textColor="#ffffff"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView31" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:src="@drawable/lthree"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView36"
-            android:layout_alignParentLeft="true" />
 
     </android.support.constraint.ConstraintLayout>
 
@@ -161,7 +89,6 @@
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:padding="16dp">
-
     </android.support.v4.view.ViewPager>
 
     <LinearLayout
@@ -170,67 +97,12 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/viewPager"
         android:layout_marginLeft="150dp"
+        android:background="#e8e7e2"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="16dp">
 
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/india"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_alignStart="@+id/view23"
-        android:layout_alignLeft="@+id/view23"
-        android:layout_alignBottom="@+id/stpv_2017"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginBottom="-2dp"
-        android:src="@drawable/india" />
-
-    <yanzhikai.textpath.SyncTextPathView
-        android:id="@+id/stpv_2017"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/view23"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginBottom="14dp"
-        android:layout_weight="1"
-        app:duration="12000"
-        app:paintStrokeColor="@color/colorPrimary"
-        app:paintStrokeWidth="3dp"
-        app:repeat="REVERSE"
-        app:showPainter="true"
-        app:text="Welcome to Delhi Yatri "
-        app:textInCenter="true"
-        app:textSize="30sp" />
-
-    <View
-        android:id="@+id/view23"
-        android:layout_width="match_parent"
-        android:layout_height="0.7dp"
-        android:layout_above="@+id/nextBtn"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_marginBottom="42dp"
-        android:background="@color/colorAccent"
-        android:padding="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stpv_2017" />
 
 
     <Button

@@ -45,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
     private TextInputLayout pass;
     private TextInputLayout username;
     private TextInputLayout confmpass;
-private String currentusername= null;
+    private String currentusername = null;
     private DatabaseReference databaseReference;
     private FirebaseDatabase mdatabase;
     private StorageReference mFirebaseStorage;
@@ -63,7 +63,7 @@ private String currentusername= null;
 
         btn = findViewById(R.id.signupbtn);
         textView = findViewById(R.id.textView10);
-       // profilePic= findViewById(R.id.profilepic_imageView);
+        // profilePic= findViewById(R.id.profilepic_imageView);
 
         progressDialog = new ProgressDialog(this);
 
@@ -71,17 +71,17 @@ private String currentusername= null;
         mUser = mAuth.getCurrentUser();
         googleSignBtn = findViewById(R.id.googleSignButton);
 
-    //    mdatabase = FirebaseDatabase.getInstance();
-  //      databaseReference = mdatabase.getReference().child("MUsers");
+        //    mdatabase = FirebaseDatabase.getInstance();
+        //      databaseReference = mdatabase.getReference().child("MUsers");
 
 
 //        mFirebaseStorage = FirebaseStorage.getInstance().getReference().child("MBlog_Profile_Pics");
 
-      //  testLogin = findViewById(R.id.testlogin);
+        //  testLogin = findViewById(R.id.testlogin);
         googleSignBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this,MainHomeScreen.class);
+                Intent intent = new Intent(RegisterActivity.this, MainHomeScreen.class);
                 startActivity(intent);
             }
         });
@@ -99,7 +99,7 @@ private String currentusername= null;
         confmpass = findViewById(R.id.textInputLayout4);
         username = findViewById(R.id.textInputLayoutusername);
 
-        currentusername=username.getEditText().getText().toString();
+        currentusername = username.getEditText().getText().toString();
 
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,7 +113,7 @@ private String currentusername= null;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(RegisterActivity.this,"Please wait..",Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, "Please wait..", Toast.LENGTH_SHORT).show();
                 createNewAccoutnt();
             }
         });
@@ -191,19 +191,19 @@ private String currentusername= null;
 
                         if (task.isSuccessful()) {
 //                            StorageReference imagePath = mFirebaseStorage.child("MBlog_Profile_Pics")
-  //                                  .child(resultUri.getLastPathSegment());
+                            //                                  .child(resultUri.getLastPathSegment());
 
                             String userid = mAuth.getCurrentUser().getUid();
                             DatabaseReference currentUserDb = databaseReference.child("Users").push();
                             String pushId = currentUserDb.getKey();
-                            Users users = new Users("userName","userEmailId","userProfilePic");
+                            Users users = new Users("userName", "userEmailId", "userProfilePic");
 
                             Map<String, String> DataToSave = new HashMap<>();
                             DataToSave.put("userName", userName);
                             DataToSave.put("userEmailId", emailID);
                             DataToSave.put("userProfilePic", password);
-                          //  DataToSave.put()
-                           // DataToSave.put("timestamp", String.valueOf(java.lang.System.currentTimeMillis()));
+                            //  DataToSave.put()
+                            // DataToSave.put("timestamp", String.valueOf(java.lang.System.currentTimeMillis()));
                             currentUserDb.setValue(DataToSave);
                             //currentUserDb.child("Email").setValue(emailID);
                             //currentUserDb.child("Username").setValue(username);
@@ -226,14 +226,14 @@ private String currentusername= null;
 
         }
     }
- // working code ends here.
+    // working code ends here.
 
     private void senttomain() {
 
         Intent intent = new Intent(RegisterActivity.this, MainHomeScreen.class);
-    //    Bundle bundle = new Bundle();
-      //  bundle.putString("UserName",currentusername);
-       // intent.putExtras(bundle);
+        //    Bundle bundle = new Bundle();
+        //  bundle.putString("UserName",currentusername);
+        // intent.putExtras(bundle);
         startActivity(intent);
         finish();
     }

@@ -57,7 +57,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 Toast.makeText(mContext, mNames.get(position), Toast.LENGTH_SHORT).show();
             }
         });
-/*animation starts
+
+        /*animation starts
         if(position > previousPosition){ // We are scrolling DOWN
 
             AnimationUtils.animate(holder, true);

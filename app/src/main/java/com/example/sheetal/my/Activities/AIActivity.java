@@ -76,7 +76,6 @@ public class AIActivity extends AppCompatActivity implements AIListener {
         aiService.setListener(this);
 
 
-
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,11 +83,13 @@ public class AIActivity extends AppCompatActivity implements AIListener {
             }
         });
     }
+
     private void createRequest() {
         ActivityCompat.requestPermissions(this,
                 new String[]{Manifest.permission.RECORD_AUDIO},
                 1);
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
@@ -121,6 +122,7 @@ public class AIActivity extends AppCompatActivity implements AIListener {
         textView_result.setText(result1.getFulfillment().getSpeech());
 
     }
+
     @Override
     public void onError(AIError error) {
 

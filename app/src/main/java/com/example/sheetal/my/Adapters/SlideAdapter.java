@@ -6,6 +6,8 @@ import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -57,6 +59,10 @@ public class SlideAdapter extends PagerAdapter {
         ImageView slide_image_view = (ImageView) view.findViewById(R.id.img);
         TextView slideHeading = (TextView) view.findViewById(R.id.text1);
         TextView slideDesc = (TextView) view.findViewById(R.id.text2);
+
+        Animation animation = AnimationUtils.loadAnimation(context, R.anim.bottomtoup);
+        slideHeading.startAnimation(animation);
+        slideDesc.startAnimation(animation);
 
         slide_image_view.setImageResource(slide_image[position]);
         slideHeading.setText(slide_headings[position]);

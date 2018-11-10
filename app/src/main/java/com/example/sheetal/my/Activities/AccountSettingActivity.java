@@ -26,7 +26,7 @@ public class AccountSettingActivity extends AppCompatActivity {
         backImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AccountSettingActivity.this,MainHomeScreen.class);
+                Intent intent = new Intent(AccountSettingActivity.this, MainHomeScreen.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             }
@@ -34,9 +34,9 @@ public class AccountSettingActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         String message = bundle.getString("userEmail");
-        if(message.equals(null)){
+        if (message.equals(null)) {
             userEmailTextView.setText("TEST LOGIN");
-        }else{
+        } else {
             userEmailTextView.setText(message);
         }
 
