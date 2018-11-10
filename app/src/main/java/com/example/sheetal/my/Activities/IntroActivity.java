@@ -17,8 +17,6 @@ import com.example.sheetal.my.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import yanzhikai.textpath.SyncTextPathView;
-
 public class IntroActivity extends AppCompatActivity {
 
 
@@ -38,7 +36,7 @@ public class IntroActivity extends AppCompatActivity {
     private Button mPreBtn;
 
     private int mCurrentPage;
-    private SyncTextPathView Atpv_1;
+
     private FirebaseAuth mAuth;
 
     @Override

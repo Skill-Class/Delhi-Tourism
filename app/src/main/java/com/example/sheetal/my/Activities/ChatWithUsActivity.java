@@ -31,8 +31,12 @@ public class ChatWithUsActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             }
         });*/
+        Crisp.User.setEmail("sheetalneo@gmail.com");
+        Crisp.User.setNickname("John Doe");
 
 
     }
+
+
 
 }

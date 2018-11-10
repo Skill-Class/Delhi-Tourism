@@ -43,8 +43,7 @@ dependencies {
     compile 'ai.api:libai:1.6.12'
     compile 'ai.api:sdk:2.0.7@aar'
 
-    // wheel
-    compile 'com.yanzhikai:TextPathView:0.1.2'
+
 
     // compile 'com.google.android.gms:play-services-auth:11.0.4'
     // glide
@@ -53,6 +52,8 @@ dependencies {
     implementation 'com.android.support:design:28.0.0-rc01'
 
     compile 'com.gjiazhe:PanoramaImageView:1.0'
+
+   
 
     //crisp chat dependency
     compile 'im.crisp:crisp-sdk:0.1.10'
