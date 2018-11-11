@@ -1,6 +1,7 @@
 package com.example.sheetal.my.Activities;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -9,8 +10,10 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
@@ -129,6 +132,31 @@ public class ChatActivity extends AppCompatActivity {
         recyclerView.setLayoutAnimation(animation);
         recyclerView.setLayoutManager(linearLayoutManager);
 
+
+
+        recyclerView.addOnItemTouchListener(new ChatActivity.RecyclerTouchListener(this,
+                recyclerView, new ChatActivity.ClickListener() {
+            @Override
+            public void onClick(View view, final int position) {
+                Toast.makeText(ChatActivity.this, "Message Number -  " + position,
+                        Toast.LENGTH_SHORT).show();
+               // Intent intent = new Intent(MainHomeScreen.this, DescriptionActivity.class);
+               // Bundle bundle = new Bundle();
+               // bundle.putString("PlacePosition", mNames.get(position));
+               // bundle.putInt("PlaceDesc", mDesc.get(position));
+                //intent.putExtras(bundle);
+                //startActivity(intent);
+              //  overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+                //finish();
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+                Toast.makeText(ChatActivity.this, "Message Reported. and Position is - " + position,
+                        Toast.LENGTH_SHORT).show();
+            }
+        }));
+
         loadmessages();
 
 
@@ -182,6 +210,60 @@ public class ChatActivity extends AppCompatActivity {
     }
     */
 
+    public static interface ClickListener {
+        public void onClick(View view, int position);
+
+        public void onLongClick(View view, int position);
+    }
+
+    class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
+
+        private ChatActivity.ClickListener clicklistener;
+        private GestureDetector gestureDetector;
+
+        public RecyclerTouchListener(Context context, final RecyclerView recycleView,
+                                     final ChatActivity.ClickListener clicklistener) {
+
+            this.clicklistener = clicklistener;
+            gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
+                @Override
+                public boolean onSingleTapUp(MotionEvent e) {
+                    return true;
+                }
+
+                @Override
+                public void onLongPress(MotionEvent e) {
+                    View child = recycleView.findChildViewUnder(e.getX(), e.getY());
+                    if (child != null && clicklistener != null) {
+                        clicklistener.onLongClick(child, recycleView.getChildAdapterPosition(child));
+                    }
+                }
+            });
+        }
+
+        @Override
+        public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+            View child = rv.findChildViewUnder(e.getX(), e.getY());
+            if (child != null && clicklistener != null && gestureDetector.onTouchEvent(e)) {
+                clicklistener.onClick(child, rv.getChildAdapterPosition(child));
+            }
+
+            return false;
+        }
+
+        @Override
+        public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+
+        }
+
+        @Override
+        public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+        }
+    }
+
+
+    //recycler ends here
     private void loadmessages() {
 
         mRootRef.child("messages").addChildEventListener(new ChildEventListener() {
