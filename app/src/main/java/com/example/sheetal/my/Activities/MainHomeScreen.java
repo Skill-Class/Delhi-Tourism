@@ -513,9 +513,11 @@ public class MainHomeScreen extends AppCompatActivity
 
         } else if (id == R.id.nav_chat) {
             mAuth.signOut();
-            Intent intent = new Intent(MainHomeScreen.this, ChatWithUsActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+            Toast.makeText(MainHomeScreen.this, "We are working on this feature within one week we will update this feature too. ",
+                    Toast.LENGTH_SHORT).show();
+            //Intent intent = new Intent(MainHomeScreen.this, ChatActivity.class);
+           // startActivity(intent);
+           // overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             return true;
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

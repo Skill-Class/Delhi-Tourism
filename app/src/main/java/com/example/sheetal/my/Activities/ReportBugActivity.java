@@ -35,7 +35,7 @@ public class ReportBugActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
 
         btnSubmit = findViewById(R.id.button3);
-        
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
