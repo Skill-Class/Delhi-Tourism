@@ -489,9 +489,17 @@ public class MainHomeScreen extends AppCompatActivity
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
             startActivity(Intent.createChooser(sharingIntent, "Share using"));
 
-        } else if (id == R.id.nav_logout) {
+        }  else if (id == R.id.nav_logout) {
             mAuth.signOut();
             Intent intent = new Intent(MainHomeScreen.this, LoginActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
+            return true;
+
+        }
+        else if (id == R.id.nav_termsandcondition) {
+            mAuth.signOut();
+            Intent intent = new Intent(MainHomeScreen.this, PrivacyActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             return true;

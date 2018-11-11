@@ -1,7 +1,6 @@
 package com.example.sheetal.my.Model;
 
 
-import im.crisp.sdk.Crisp;
 
 public class Application extends android.app.Application {
         @Override

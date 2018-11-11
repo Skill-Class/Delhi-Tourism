@@ -9,12 +9,11 @@ import android.widget.ImageView;
 
 import com.example.sheetal.my.R;
 
-import im.crisp.sdk.Crisp;
 
 public class ChatWithUsActivity extends AppCompatActivity {
 
 
-    private ImageView backBtn;
+    private ImageView backBtn ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +21,15 @@ public class ChatWithUsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat_with_us);
 
 
-       // backBtn = findViewById(R.id.imageView9);
-       /* backBtn.setOnClickListener(new View.OnClickListener() {
+       backBtn = findViewById(R.id.imageView9);
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ChatWithUsActivity.this,MainHomeScreen.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit);
             }
-        });*/
+        });
     //    Crisp.User.setEmail("sheetalneo@gmail.com");
       //  Crisp.User.setNickname("John Doe");
 

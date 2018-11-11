@@ -29,16 +29,27 @@
             <item
                 android:id="@+id/nav_chat"
                 android:icon="@drawable/ic_question_answer_black_24dp"
-                android:title="Chat with Us" />
+                android:title="Chat with us" />
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
                 android:title="Share" />
+
+            <item android:id="@+id/nav_termsandcondition"
+                android:title="Privacy Policy and T\u0026C"
+                android:icon="@drawable/ic_receipt_black_24dp"/>
+
+            <item android:id="@+id/nav_help"
+                android:title="Report a bug / Need Help?"
+                android:icon="@drawable/ic_help_black_24dp"/>
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/logout"
                 android:title="Logout" />
         </menu>
     </item>
+
+
+    <item android:title="App Version - DY 1.0.1" />
 
 </menu>
