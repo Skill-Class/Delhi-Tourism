@@ -61,7 +61,8 @@
         <activity android:name=".Activities.AboutDelhi" />
         <activity android:name=".Activities.PanoramaViewActivity" />
         <activity android:name=".Activities.ChatWithUsActivity" />
-        <activity android:name=".Activities.PrivacyActivity"></activity>
+        <activity android:name=".Activities.PrivacyActivity" />
+        <activity android:name=".Activities.ReportBugActivity"></activity>
     </application>
 
 </manifest>
