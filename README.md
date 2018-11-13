@@ -1,5 +1,5 @@
 # About Delhi Yatri
-`Delhi Yatri is an android app. Delhi Yatri was developed as a software engineering project by Sheetal Kumar and Meghna Agarwal. This app tells you about the famous tourist places in Delhi. `
+`Delhi Yatri is an android app. Delhi Yatri was developed as a software engineering project by Sheetal Kumar and Meghna Agarwal. This app tells you about the famous tourist places in Delhi. We are also working on ios development of this app. `
 ***
 ![](https://github.com/ksheetal/DelhiTourism/blob/master/download%20(7).png)
 
